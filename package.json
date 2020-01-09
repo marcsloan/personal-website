@@ -48,5 +48,9 @@
     "webpack": "^4.29.0",
     "webpack-bundle-tracker": "^0.4.2-beta",
     "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0"
   }
 }
