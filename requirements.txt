@@ -30,7 +30,7 @@ django-heroku==0.3.1
 django-rest-auth==0.6.0
 django-storages==1.6.5
 django-su==0.8.0
-djangorestframework==3.7.7
+djangorestframework==3.9.1
 drfdocs==0.0.9
 flake8==3.6.0
 flake8-commas==2.0.0
