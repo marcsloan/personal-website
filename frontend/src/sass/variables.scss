@@ -1,38 +1,5 @@
-$border-grey: #C7C7C7;
-$subheader-grey: #6F6F6F;
-$selected-grey: #E6E8E8;
-$hover-grey: #F0F0F0;
-$cs-teal: #00AFBA;
-$user-blue: #007EDB;
-$chat-teal: #F7FFFF;
-$faded-white-text: rgba(255, 255, 255, .85);
-
-body{
-    font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
-    color: #4b4b4b;
-    -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-      margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-// taken from the old extension
-$light-teal: #16ADB9;
-$link-color: $light-teal;
-$source-no-link-colour: #000000;
-$text-color: #000000;
-$text-grey: #636363;
-$dark-teal: #00565E;
-$title-grey: #959595;
-$notification-text: #c4c4c4;
-$warning-orange: #ff952d;
-$header-blue: #e5f4f7;
-$white-text: #ffffff;
-$disabled: #C0C0C0;
-
-:export {
-  lightTeal: $light-teal;
-  headerBlue: $header-blue;
-  textColor: $text-color;
-}
+// Site colours
+$white: #FDFDFD;
+$background: $white;
+$teal: #3AB8C3;
+$link: yellow;

@@ -1,0 +1,40 @@
+@import "./variables.scss";
+
+html,
+body {
+    height: 100%;
+}
+
+body{
+  font-family: Avenir,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+  color: $background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+.react-container {
+  height: 100%;
+}
+
+#react{
+  height: 100%;
+}
+
+
+.large-spacer {
+  margin-top: 140px;
+  width: 100%;
+}
+
+.medium-spacer {
+  margin-top: 90px;
+  width: 100%;
+}
+
+.small-spacer {
+  margin-top: 30px;
+  width: 100%;
+}
+

@@ -1,7 +1,8 @@
 import "babel-polyfill"
 
-import "../css/wedding.css"
+// import "../css/wedding.css"
 import "../css/bootstrap.css"
+import "../sass/base.scss"
 
 import { persistReducer, persistStore } from "redux-persist"
 
