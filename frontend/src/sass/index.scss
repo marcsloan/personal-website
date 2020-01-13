@@ -13,10 +13,10 @@
     }
 
     .index-content{
-      background-color: $teal;
       height: 100%;
       padding: 0;
       width: 100%;
+
 
       .message-box {
         display: flex;
@@ -76,7 +76,6 @@
   }
 }
 
-
 .big-arrow{
   display: flex;
   .arrow-shaft{
@@ -114,17 +113,24 @@
    text-decoration:none;
  }
 
-@media (min-width: 992px) { // if lg, then display on the right if the page
-  .demo{
+@media (min-width: 992px) { //lg displays only
+  .demo{ // if lg, then display on the right if the page
     position: fixed;
     top: 25%;
   }
+  .index-content {
+    background: $teal;
+    background: linear-gradient(90deg, $teal 0%, $teal 75%, $gradient-blue 100%);
+  }
 }
 
-@media (max-width: 991.98px) { // if less than lg, display in line as you go down the page
-  .demo{
+@media (max-width: 991.98px) { // if less than lg
+  .demo{ //display in line as you go down the page
     display:block;
     margin:auto;
+  }
+  .index-content {
+    background: $teal;
   }
 }
 

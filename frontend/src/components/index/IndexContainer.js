@@ -43,6 +43,7 @@ class IndexContainer extends Component {
 
         return (
             <div className="index">
+                <NavContainer/>
                 <div className="container index-container">
                     <div className="row">
                         <div className="col-lg-7 column-container index-content">
