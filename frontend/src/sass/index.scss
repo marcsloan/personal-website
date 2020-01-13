@@ -16,6 +16,7 @@
       background-color: $teal;
       height: 100%;
       padding: 0;
+      width: 100%;
 
       .message-box {
         display: flex;
@@ -113,14 +114,52 @@
    text-decoration:none;
  }
 
-.demo{
-  position: fixed;
-  top: 25%;
+@media (min-width: 992px) { // if lg, then display on the right if the page
+  .demo{
+    position: fixed;
+    top: 25%;
+  }
 }
 
+@media (max-width: 991.98px) { // if less than lg, display in line as you go down the page
+  .demo{
+    display:block;
+    margin:auto;
+  }
+}
 
+//--------
+$arrow-width: 103%;
+$arrow-height: 60px;
+$arrow-radius : $arrow-height/2;
+$arrow-angle : 35deg;
 
+.arrow {
+  position: relative;
+  background: $white;
+  width: $arrow-width;
+  height: 60px;
+  border-bottom-right-radius: $arrow-radius;
+  border-top-right-radius: $arrow-radius;
+  transform-origin: right center;
 
+  &:before { transform: rotate(-$arrow-angle*4); }
+  &:after { transform: rotate($arrow-angle*4); }
+
+  &:before, &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      right: -170px;
+      background: $white;
+      width: 200px;
+      height: 70px;
+      transform-origin: $arrow-width/20 center;
+      border-radius: $arrow-radius;
+    }
+}
+
+//--------
 
 
 //$dark-teal: #08565D;
