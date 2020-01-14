@@ -5,6 +5,7 @@
   justify-content: flex-end;
   //background-color: $nav-blue;
   background: linear-gradient(90deg, rgba(31,163,207,1) 0%, rgba(0,126,219,1) 50%, rgba(31,163,207,1) 100%);
+  z-index: 10000000;
 
   a{
     font-weight: bold;

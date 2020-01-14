@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import NavContainer from "../nav/NavContainer"
+import NavContainer from "../pageElements/NavContainer"
+import FooterContainer from "../pageElements/FooterContainer"
 import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import "../../sass/index.scss"
@@ -46,7 +47,7 @@ class IndexContainer extends Component {
                 <NavContainer/>
                 <div className="container index-container">
                     <div className="row">
-                        <div className="col-lg-7 column-container index-content">
+                        <div className="col-lg-7 index-content">
                             <div className="large-spacer"/>
                             <div className="message-box justify-content-center">
                                 <img className="message-avatar"
@@ -83,24 +84,20 @@ class IndexContainer extends Component {
                             </div>
 
                         </div>
-                        <div className="col-lg-5 column-container">
+                        <div className="col-lg-5">
                             <img className="demo" src={this.props.global.STATIC_URL + "img/index/screenshot.png"}/>
                         </div>
                     </div>
                 </div>
                 <div className="container index-container d-lg-none">
                     <div className="row">
-                        <div className="column-container index-content">
+                        <div className="index-content">
                             <div className="medium-spacer"/>
                             {bottomHalfOfPage}
                         </div>
                     </div>
                 </div>
-                {/*//   /!*<span>You are invited to join</span>*!/*/}
-                {/*// /!*<NavContainer history={this.props.history}/>*!/*/}
-                {/*// <a href="/rsvp">*/}
-                {/*//     <img className="poster" src={this.props.global.STATIC_URL + "img/index.png"} />*/}
-                {/*// </a>*/}
+                <FooterContainer global={this.props.global}/>
             </div>
         )
     }

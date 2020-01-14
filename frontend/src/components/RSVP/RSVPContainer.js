@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import PropTypes from "prop-types"
 import {Switch} from "react-router-dom"
 import {Route} from "react-router-dom"
-import NavContainer from "../nav/NavContainer"
+import NavContainer from "../pageElements/NavContainer"
 import axios from "axios"
 import Header from "../borders/Header";
 import Footer from "../borders/Footer";

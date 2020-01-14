@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Switch} from "react-router-dom"
 import {Route} from "react-router-dom"
-import NavContainer from "../nav/NavContainer"
+import NavContainer from "../pageElements/NavContainer"
 import Header from "../borders/Header";
 import Footer from "../borders/Footer";
 import PropTypes from "prop-types";

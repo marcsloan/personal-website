@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import NavContainer from "../nav/NavContainer"
+import NavContainer from "../pageElements/NavContainer"
 import PropTypes from "prop-types";
 import Header from "../borders/Header";
 import Footer from "../borders/Footer";
