@@ -18,12 +18,12 @@
       width: 100%;
 
 
-      .message-box {
+      .index-message-box {
         display: flex;
         align-items: center;
         padding: 0 15px;
 
-          .message-avatar {
+          .index-message-avatar {
             border-radius: 50%;
             height: 120px;
             width: 120px;
@@ -31,7 +31,7 @@
           }
         }
 
-      .message {
+      .index-message {
         color: $teal;
         padding: 16px;
         position: relative;
@@ -51,7 +51,7 @@
         }
       }
 
-      .message:after {
+      .index-message:after {
         position: absolute;
         content: "";
         width: 0;
@@ -59,7 +59,7 @@
         border-style: solid;
         border-width: 0px 10px 10px 0;
         top: 0;
-        left: -10px;
+        left: -9px;
         border-color: transparent $white transparent transparent;
       }
     }
@@ -116,7 +116,8 @@
 @media (min-width: 992px) { //lg displays only
   .demo{ // if lg, then display on the right if the page
     position: fixed;
-    //top: 25%;
+    top: 20%;
+    margin-left: 30px;
   }
   .index-content {
     background: $teal;
@@ -127,7 +128,11 @@
 @media (max-width: 991.98px) { // if less than lg
   .demo{ //display in line as you go down the page
     display:block;
-    margin:auto;
+    margin: 50px auto;
+
+    .sidepanel{
+      margin: auto;
+    }
   }
   .index-content {
     background: $teal;

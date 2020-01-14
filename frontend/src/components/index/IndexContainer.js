@@ -50,10 +50,10 @@ class IndexContainer extends Component {
                     <div className="row">
                         <div className="col-lg-7 index-content">
                             <div className="large-spacer"/>
-                            <div className="message-box justify-content-center">
-                                <img className="message-avatar"
+                            <div className="index-message-box justify-content-center">
+                                <img className="index-message-avatar"
                                      src={this.props.global.STATIC_URL + "img/index/avatar.jpeg"}/>
-                                <div className="message">
+                                <div className="index-message">
                                     <span>Hi, I'm Marc Sloan</span>
                                 </div>
                             </div>
@@ -86,7 +86,9 @@ class IndexContainer extends Component {
 
                         </div>
                         <div className="col-lg-5">
-                            <Widget global={this.props.global}/>
+                            <div className="demo">
+                                <Widget global={this.props.global}/>
+                            </div>
                             {/*<img className="demo" src={this.props.global.STATIC_URL + "img/index/screenshot.png"}/>*/}
                         </div>
                     </div>

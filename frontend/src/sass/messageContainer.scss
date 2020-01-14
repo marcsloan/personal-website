@@ -207,7 +207,7 @@
 .message.received.first:after {
   border-width: 0px 10px 10px 0;
   top: 0;
-  left: -10px;
+  left: -9px;
 }
 
 .message.received.first.scout:after {
@@ -258,7 +258,7 @@
   border-width: 0px 0 10px 10px;
   border-color: transparent transparent transparent $user-blue;
   top: 0;
-  right: -10px;
+  right: -9px;
 }
 
 .message:not(:last-child) {
