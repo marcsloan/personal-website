@@ -6,7 +6,7 @@ import {MessageContainer} from "./messageContainer";
 
 export class Widget extends React.Component {
     static propTypes = {
-
+        global: PropTypes.object.isRequired,
     };
 
     render() {
@@ -30,7 +30,7 @@ export class Widget extends React.Component {
                 <div className="chat-container">
                     <div className="sidepanel">
                         <div className="message-container">
-                            <MessageContainer chatLog={chatLog} loading={loading}
+                            <MessageContainer global={this.props.global} chatLog={chatLog} loading={loading}
                                               buttons={buttons} dropdowns={dropdowns}
                             />
                         </div>

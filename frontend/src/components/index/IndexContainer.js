@@ -86,7 +86,7 @@ class IndexContainer extends Component {
 
                         </div>
                         <div className="col-lg-5">
-                            <Widget />
+                            <Widget global={this.props.global}/>
                             {/*<img className="demo" src={this.props.global.STATIC_URL + "img/index/screenshot.png"}/>*/}
                         </div>
                     </div>

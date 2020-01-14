@@ -48,6 +48,223 @@
   }
 }
 
+.message-box {
+  display: flex;
+
+  &.first {
+    margin: 16px 0 0px;
+  }
+
+  .message-avatar {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    min-height: 36px;
+    border-radius: 50%;
+
+    &.received {
+      margin: 4px 12px 0 0;
+    }
+
+    &.sent {
+      margin: 4px 0 0 12px;
+    }
+  }
+}
+
+/* Messages */
+
+.message {
+  color: #000;
+  clear: both;
+  line-height: 18px;
+  font-size: 15px;
+  padding: 8px;
+  position: relative;
+  margin: 4px 0;
+  max-width: 85%;
+  max-width: 299px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  img {
+    max-width: 250px;
+    max-height: 300px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.message.first:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.metadata {
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 7px;
+  position: relative;
+  bottom: -4px;
+}
+
+.metadata .time {
+  color: $faded-white-text;
+  font-size: 11px;
+  display: inline-block;
+}
+
+.metadata .tick {
+  display: inline-block;
+  margin-left: 2px;
+  position: relative;
+  top: 4px;
+  height: 16px;
+  width: 16px;
+}
+
+.metadata .tick svg {
+  position: absolute;
+  transition: .5s ease-in-out;
+}
+
+.metadata .tick svg:first-child {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: perspective(800px) rotateY(180deg);
+  transform: perspective(800px) rotateY(180deg);
+}
+
+.metadata .tick svg:last-child {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: perspective(800px) rotateY(0deg);
+  transform: perspective(800px) rotateY(0deg);
+}
+
+.metadata .tick-animation svg:first-child {
+  -webkit-transform: perspective(800px) rotateY(0);
+  transform: perspective(800px) rotateY(0);
+}
+
+.metadata .tick-animation svg:last-child {
+  -webkit-transform: perspective(800px) rotateY(-179.9deg);
+  transform: perspective(800px) rotateY(-179.9deg);
+}
+
+.message.received {
+  border-radius: 0px 5px 5px 5px;
+  float: left;
+  color: $white;
+
+  &:not(.first) {
+    margin-left: 48px;
+  }
+
+  &.scout {
+    background: $teal;
+  }
+
+  &.twitter {
+    background: #1da1f2 !important;
+  }
+
+  &.youtube {
+    background: #ff0000
+  }
+
+  &.google-calendar {
+    background: #4285F4;
+  }
+
+  &.reddit {
+    background: #ff8458 !important;
+  }
+
+  &.trump {
+    background: #ffaf00 !important;
+  }
+
+  &.genius{
+    background: #292929 !important;
+  }
+
+  &.spotify{
+    background: #1DB954 !important;
+  }
+}
+
+.message.received .metadata {
+  padding: 0 0 0 16px;
+}
+
+.message.received.first:after {
+  border-width: 0px 10px 10px 0;
+  top: 0;
+  left: -10px;
+}
+
+.message.received.first.scout:after {
+  border-color: transparent $teal transparent transparent;
+}
+
+.message.received.first.twitter:after {
+  border-color: transparent #1da1f2 transparent transparent;
+}
+
+.message.received.first.youtube:after {
+  border-color: transparent #ff0000 transparent transparent;
+}
+
+.message.received.first.google-calendar:after {
+  border-color: transparent #4285F4 transparent transparent;
+}
+
+.message.received.first.reddit:after {
+  border-color: transparent #ff8458 transparent transparent;
+}
+
+.message.received.first.trump:after {
+  border-color: transparent #FFAF00 transparent transparent;
+}
+
+.message.received.first.genius:after{
+    border-color: transparent #292929 transparent transparent;
+  }
+
+.message.received.first.spotify:after{
+    border-color: transparent #1DB954 transparent transparent;
+  }
+
+.message.sent {
+  background: $user-blue;
+  color: $white;
+  border-radius: 5px 0px 5px 5px;
+  float: right;
+  margin-left: auto;
+
+  &:not(.first) {
+    margin-right: 48px;
+  }
+}
+
+.message.sent.first:after {
+  border-width: 0px 0 10px 10px;
+  border-color: transparent transparent transparent $user-blue;
+  top: 0;
+  right: -10px;
+}
+
+.message:not(:last-child) {
+  margin-bottom: 0px;
+}
+
 /* Conversation */
 
 .conversation {
@@ -178,3 +395,94 @@
       border-color: darken($user-blue, 10%);
     }
   }
+
+// CSS loading animation bounce
+/*Huge thanks to @tobiasahlin at http://tobiasahlin.com/spinkit/ */
+.spinner {
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin-right: 7px;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.6s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.6s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0)
+  }
+  40% {
+    -webkit-transform: scale(1.0)
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+.message {
+  .copy-box {
+    display: flex;
+    margin: 5px 0px;
+
+    .copy-box-content {
+      font-size: 12px;
+      padding: 4px 10px 4px 10px;
+      background: $white;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      color: $subheader-grey;
+      white-space: normal;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      border: 1px solid $border-grey;
+      margin-left: auto;
+    }
+
+    .copy-button {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border: 1px solid $border-grey;
+      padding: 4px;
+      background: $white;
+      border-left: none;
+      cursor: pointer;
+      margin-right: auto;
+
+      &:hover, &:active {
+        background: $selected-grey;
+      }
+
+      img {
+        width: 18px;
+        height: 18px;
+        display: block;
+      }
+    }
+  }
+}

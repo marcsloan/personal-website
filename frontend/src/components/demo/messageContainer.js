@@ -6,7 +6,7 @@ import ScrollToBottom from "react-scroll-to-bottom";
 import ReactTooltip from "react-tooltip";
 import styles from "../../sass/messagecontainer.scss";
 // import { getAsset, timeout } from "../../utils/utils";
-// import $ from "jquery";
+import $ from "jquery";
 import Markdown from 'markdown-to-jsx';
 
 export const CHAT_SIZE = {
@@ -15,9 +15,11 @@ export const CHAT_SIZE = {
   //messagecontainer.scss to be this value minus 10 pixels.
 };
 
+let STATIC_URL = ""
+
 export class MessageContainer extends Component {
   static propTypes = {
-    // new
+    global: PropTypes.object.isRequired,
     chatLog: PropTypes.array.isRequired,
     buttons: PropTypes.array.isRequired,
     dropdowns: PropTypes.array.isRequired,
@@ -28,6 +30,7 @@ export class MessageContainer extends Component {
     super(props);
     this.state = { dropdowns: this.props.dropdowns };
     this.handleChange = this.handleChange.bind(this);
+    STATIC_URL = this.props.global.STATIC_URL
   }
 
   componentDidUpdate(prevProps) {
@@ -66,6 +69,7 @@ export class MessageContainer extends Component {
     let currentAuthor = "";
 
     let loadingMessage = this.props.loading ? (<Message
+        global={this.props.global}
       message={{
         author: "scout",
         content: "",
@@ -90,9 +94,8 @@ export class MessageContainer extends Component {
             {
               chatLog.map(function(item, i) {
                 if (item.content !== "") {
-                  let msg = <div></div>
-                  // let msg = (<Message message={item} key={i}
-                  //                     isFirst={(item.author !== currentAuthor)}/>);
+                  let msg = (<Message global={this.props.global} message={item} key={i}
+                                      isFirst={(item.author !== currentAuthor)}/>);
                   currentAuthor = item.author;
                   return msg;
                 }
@@ -131,15 +134,16 @@ export class MessageContainer extends Component {
 
 class Message extends Component {
   static propTypes = {
-    global: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired,
     message: PropTypes.object.isRequired,
-    isFirst: PropTypes.bool.isRequired
+    isFirst: PropTypes.bool.isRequired,
+    global: PropTypes.object.isRequired,
+    //old
+    user: PropTypes.object.isRequired,
   };
 
 
-  getTime = function(timestamp) {
-    let dt = new Date(timestamp);
+  getTime = function() {
+    let dt = new Date();
     // return dt.getHours() + ":" + dt.getMinutes()
     return dt.toLocaleTimeString("en-GB", {
       hour: "2-digit",
@@ -148,21 +152,22 @@ class Message extends Component {
   };
 
   getAvatarSrc() {
-    if (this.props.message.author !== "user" || this.props.user.avatar === "") {
-      return getAsset(`img/chatbot-avatars/${this.props.message.author}.png`);
+    if (this.props.message.author !== "user") {
+      return `${this.props.global.STATIC_URL}img/demo/${this.props.message.author}.png`
     } else {
-      return this.props.user.avatar;
+      return "";
     }
   }
 
   async handleLinkClick(event) {
-    dispatchToBackground("sendAnalyticsEvent",
-      {
-        "event_type": "extension_interaction",
-        "interaction_type": "link_click",
-        "url": window.location.href
-      }
-    );
+    // dispatchToBackground("sendAnalyticsEvent",
+    //   {
+    //     "event_type": "extension_interaction",
+    //     "interaction_type": "link_click",
+    //     "url": window.location.href
+    //   }
+    // );
+    // I might want to use this to send GA events for when people click on links
   }
 
   render() {
@@ -170,20 +175,18 @@ class Message extends Component {
     const emoji_output = emoji_converter.replace_colons(this.props.message.content);
 
     return (
-      <div className={`${styles["message-box"]} ${this.props.isFirst ? `${styles["first"]}` : ""}`}>
+      <div className={`message-box ${this.props.isFirst ? `first` : ""}`}>
 
-        {this.props.isFirst && this.props.message.author !== "user" ? <img
-          className={`${styles["message-avatar"]} ${styles["received"]}`}
-          src={this.getAvatarSrc()}/> : ""}
-
+        {this.props.isFirst && this.props.message.author !== "user" ?
+            <img className="message-avatar received" src={this.getAvatarSrc()}/> : ""}
         <div
-          className={`${styles["message"]} ${this.props.message.author !== "user" ? styles["received"] : styles["sent"]} ${this.props.isFirst ? styles["first"] : ""} ${styles[`${this.props.message.author}`]}`}>
+          className={`message ${this.props.message.author !== "user" ? "received" : "sent"} ${this.props.isFirst ? "first" : ""} ${this.props.message.author}`}>
           {
             this.props.isLoading ? (
-              <div className={styles["spinner"]}>
-                <div className={styles["bounce1"]}></div>
-                <div className={styles["bounce2"]}></div>
-                <div className={styles["bounce3"]}></div>
+              <div className={"spinner"}>
+                <div className={"bounce1"}></div>
+                <div className={"bounce2"}></div>
+                <div className={"bounce3"}></div>
               </div>
             ) : (
               <div>
@@ -203,20 +206,16 @@ class Message extends Component {
                       }}
                     >{emoji_output}</Markdown>
                   </div>
-                {
-                  this.props.message.timestamp && (this.props.message.timestamp !== "") ? (
-                    <span className={styles["metadata"]}>
-                                    <span className={styles["time"]}>{this.getTime(this.props.message.timestamp)}</span>
-                                </span>
-                  ) : ""
-                }
+                    <span className="metadata">
+                      <span className="time">{this.getTime()}</span>
+                    </span>
               </div>
             )
           }
         </div>
 
         {this.props.isFirst && this.props.message.author === "user" ? <img
-          className={`${styles["message-avatar"]} ${styles["sent"]}`}
+          className="message-avatar sent"
           src={this.getAvatarSrc()}/> : ""}
       </div>
     );
@@ -240,13 +239,14 @@ class Copybox extends Component {
       await timeout(2000);
       this.setState({ copied: false });
 
-      dispatchToBackground("sendAnalyticsEvent",
-        {
-          "event_type": "extension_interaction",
-          "interaction_type": "copy_click",
-          "url": window.location.href
-        }
-      );
+      // Keep for GA reporting
+      // dispatchToBackground("sendAnalyticsEvent",
+      //   {
+      //     "event_type": "extension_interaction",
+      //     "interaction_type": "copy_click",
+      //     "url": window.location.href
+      //   }
+      // );
     }
 
   getCopyText() {
@@ -272,8 +272,8 @@ class Copybox extends Component {
       const emoji_output = emoji_converter.replace_colons(React.getInnerText(this));
 
       return (
-        <div className={styles["copy-box"]}>
-          <div className={styles["copy-box-content"]}>
+        <div className="copy-box">
+          <div className="copy-box-content">
             <Markdown className={"scout-react-select"} options={{
                         overrides: {
                           a: {
@@ -284,7 +284,7 @@ class Copybox extends Component {
                         },
                       }}>{emoji_output}</Markdown>
           </div>
-          <div className={styles["copy-button"]} data-tip={this.getCopyText()} key={this.getCopyText()}
+          <div className="copy-button" data-tip={this.getCopyText()} key={this.getCopyText()}
                  onClick={() => this.handleCopyClick()}
 
                  onMouseEnter={() => {
@@ -294,7 +294,7 @@ class Copybox extends Component {
                    this.setState({ hover: false });
                  }}
             >
-              <img src={getAsset(`img/copy.png`)}/>
+              <img src={`${STATIC_URL}img/demo/copy.png`}/>
             </div>
           <ReactTooltip/>
           </div>
@@ -311,34 +311,34 @@ function copyToClipboard(value) {
   textField.remove();
 }
 
-// $(function() {
-// 	React.getInnerText = function(obj) {
-// 		var buf = '';
-// 		if( obj ) {
-// 			var type = typeof(obj);
-// 			if( type === 'string' || type === 'number' ) {
-// 				buf += obj;
-// 			} else if( type === 'object' ) {
-// 				var children = null;
-// 				if( Array.isArray(obj) ) {
-// 					children = obj;
-// 				} else {
-// 					var props = obj.props;
-// 					if( props ) {
-// 						children = props.children;
-// 					}
-// 				}
-// 				if( children ) {
-// 					if( Array.isArray(children) ) {
-// 						children.forEach(function(o) {
-// 							buf += React.getInnerText(o);
-// 						});
-// 					} else {
-// 						buf += React.getInnerText(children);
-// 					}
-// 				}
-// 			}
-// 		}
-// 		return buf;
-// 	};
-// });
+$(function() {
+	React.getInnerText = function(obj) {
+		var buf = '';
+		if( obj ) {
+			var type = typeof(obj);
+			if( type === 'string' || type === 'number' ) {
+				buf += obj;
+			} else if( type === 'object' ) {
+				var children = null;
+				if( Array.isArray(obj) ) {
+					children = obj;
+				} else {
+					var props = obj.props;
+					if( props ) {
+						children = props.children;
+					}
+				}
+				if( children ) {
+					if( Array.isArray(children) ) {
+						children.forEach(function(o) {
+							buf += React.getInnerText(o);
+						});
+					} else {
+						buf += React.getInnerText(children);
+					}
+				}
+			}
+		}
+		return buf;
+	};
+});
