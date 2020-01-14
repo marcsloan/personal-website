@@ -4,6 +4,7 @@ import FooterContainer from "../pageElements/FooterContainer"
 import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import "../../sass/index.scss"
+import {Widget} from "../demo/widget";
 
 class IndexContainer extends Component {
     static propTypes = {
@@ -85,7 +86,8 @@ class IndexContainer extends Component {
 
                         </div>
                         <div className="col-lg-5">
-                            <img className="demo" src={this.props.global.STATIC_URL + "img/index/screenshot.png"}/>
+                            <Widget />
+                            {/*<img className="demo" src={this.props.global.STATIC_URL + "img/index/screenshot.png"}/>*/}
                         </div>
                     </div>
                 </div>
