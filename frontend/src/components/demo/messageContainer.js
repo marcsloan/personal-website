@@ -34,7 +34,7 @@ export class MessageContainer extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (JSON.stringify(prevProps.dropdowns) !== JSON.stringify(this.prop.dropdowns)) {
+    if (JSON.stringify(prevProps.dropdowns) !== JSON.stringify(this.props.dropdowns)) {
       this.setState({
         dropdowns: this.props.dropdowns
       });
@@ -74,7 +74,7 @@ export class MessageContainer extends Component {
         author: "scout",
         content: "",
         type: "message"
-      }} isFirst={true} isLoading={true}/>) : (<div></div>);
+      }} isFirst={false} isLoading={true}/>) : (<div></div>);
 
     const buttons = (this.props.buttons) || [];
     const dropdowns = (this.state.dropdowns) || [];
@@ -94,7 +94,7 @@ export class MessageContainer extends Component {
             {
               chatLog.map(function(item, i) {
                 if (item.content !== "") {
-                  let msg = (<Message global={this.props.global} message={item} key={i}
+                  let msg = (<Message message={item} key={i}
                                       isFirst={(item.author !== currentAuthor)}/>);
                   currentAuthor = item.author;
                   return msg;
@@ -136,9 +136,6 @@ class Message extends Component {
   static propTypes = {
     message: PropTypes.object.isRequired,
     isFirst: PropTypes.bool.isRequired,
-    global: PropTypes.object.isRequired,
-    //old
-    user: PropTypes.object.isRequired,
   };
 
 
@@ -153,7 +150,7 @@ class Message extends Component {
 
   getAvatarSrc() {
     if (this.props.message.author !== "user") {
-      return `${this.props.global.STATIC_URL}img/demo/${this.props.message.author}.png`
+      return `${STATIC_URL}img/demo/${this.props.message.author}.png`
     } else {
       return "";
     }
