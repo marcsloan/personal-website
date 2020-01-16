@@ -17,7 +17,8 @@ export class Widget extends React.Component {
             chatLog: [{
                     author: "scout",
                     content: "Hi, I'm Marc Sloan",
-                    type: "message"
+                    type: "message",
+                    timestamp: this.getTime()
                 }],
             buttons: [],
             dropdowns: [],
@@ -35,7 +36,8 @@ export class Widget extends React.Component {
             chatLog: this.state.chatLog.concat({
                 author: "user",
                 content: button,
-                type: "message"
+                type: "message",
+                timestamp: this.getTime()
             }),
             dropdowns: [],
             loading: true
@@ -49,13 +51,23 @@ export class Widget extends React.Component {
             chatLog: this.state.chatLog.concat({
                 author: "user",
                 content: dropdown,
-                type: "message"
+                type: "message",
+                timestamp: this.getTime()
             }),
             dropdowns: [],
             loading: true
         })
         this.transmitMessages(dropdown)
     }
+
+    getTime = function() {
+        let dt = new Date();
+        // return dt.getHours() + ":" + dt.getMinutes()
+        return dt.toLocaleTimeString("en-GB", {
+          hour: "2-digit",
+          minute: "2-digit"
+        });
+      };
 
     async transmitMessages(button){
         const LOADING_WAIT_TIME = 700;
@@ -76,8 +88,10 @@ export class Widget extends React.Component {
 
         for (let i = 0; i < numMessages; i++){
             setTimeout(function(){
+                let chatEntry = transcript.chatLog[i]
+                chatEntry.timestamp = this.getTime()
                 this.setState({
-                    chatLog: this.state.chatLog.concat(transcript.chatLog[i]),
+                    chatLog: this.state.chatLog.concat(chatEntry),
                     loading: false
                 })
                 if (i < numMessages - 1){

@@ -145,15 +145,6 @@ class Message extends Component {
     }
   }
 
-  getTime = function() {
-    let dt = new Date();
-    // return dt.getHours() + ":" + dt.getMinutes()
-    return dt.toLocaleTimeString("en-GB", {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
-  };
-
   getAvatarSrc() {
     return `${STATIC_URL}img/demo/${this.props.message.author}.png`
   }
@@ -234,7 +225,7 @@ class Message extends Component {
                     >{emoji_output}</Markdown>
                   </div>
                     <span className="metadata">
-                      <span className="time">{this.getTime()}</span>
+                      <span className="time">{this.props.message.timestamp}</span>
                     </span>
               </div>
             )
