@@ -4,10 +4,9 @@ import React, { Component } from "react";
 import Select from "react-dropdown-select";
 import ScrollToBottom from "react-scroll-to-bottom";
 import ReactTooltip from "react-tooltip";
-import styles from "../../sass/messagecontainer.scss";
-// import { getAsset, timeout } from "../../utils/utils";
 import $ from "jquery";
 import Markdown from 'markdown-to-jsx';
+import { TwitterTimelineEmbed, TwitterTweetEmbed} from 'react-twitter-embed';
 
 export const CHAT_SIZE = {
   width: 387,
@@ -24,6 +23,8 @@ export class MessageContainer extends Component {
     buttons: PropTypes.array.isRequired,
     dropdowns: PropTypes.array.isRequired,
     loading: PropTypes.bool.isRequired,
+    handleClick: PropTypes.func.isRequired,
+    handleChange: PropTypes.func.isRequired
   };
 
   constructor(props) {
@@ -42,8 +43,7 @@ export class MessageContainer extends Component {
   }
 
   handleClick = async function(buttonText) {
-    // need some code here that moves the chatlog further along
-    console.log("Button clicked: " + buttonText)
+      this.props.handleClick(buttonText)
   };
 
   handleChange = async function(event, text, name) {
@@ -52,9 +52,8 @@ export class MessageContainer extends Component {
     }
     let value = event[0].label;
     if (value) {
-      this.setState({ dropdowns: [] });
-      //do something here that moves the chatlog along and also removes the dropdown option that was selected
-      }
+      this.props.handleChange(text + ' ' + value)
+    }
   };
 
   componentDidMount() {
@@ -68,21 +67,13 @@ export class MessageContainer extends Component {
     let chatLog = this.props.chatLog || [];
     let currentAuthor = "";
 
-    let loadingMessage = this.props.loading ? (<Message
-        global={this.props.global}
-      message={{
-        author: "scout",
-        content: "",
-        type: "message"
-      }} isFirst={false} isLoading={true}/>) : (<div></div>);
-
     const buttons = (this.props.buttons) || [];
     const dropdowns = (this.state.dropdowns) || [];
 
-    const handleClick = this.handleClick;
+    const handleClick = this.handleClick.bind(this);
 
     const emoji_converter = new EmojiConvertor();
-    const handleChange = this.handleChange;
+    const handleChange = this.handleChange.bind(this);
 
     return (
       <div className="chat">
@@ -101,7 +92,14 @@ export class MessageContainer extends Component {
                 }
               }, this)
             }
-            {loadingMessage}
+            {
+              this.props.loading ? (<Message
+                  global={this.props.global}
+                message={{
+                  author: "scout",
+                  content: "",
+                  type: "message"
+                }} isFirst={('scout' !== currentAuthor)} isLoading={true}/>) : (<div></div>)}
           </ScrollToBottom>
         </div>
         {(buttons.length > 0 || dropdowns.length > 0) ?
@@ -138,6 +136,13 @@ class Message extends Component {
     isFirst: PropTypes.bool.isRequired,
   };
 
+    componentDidMount() {
+    if (this.props.message.content === "I've just opened up the website for installing the browser add-on"){
+      setTimeout(function(){
+        window.open("https://chrome.google.com/webstore/detail/scout-browser-assistant/jjfheehgdpcdemmbceopcailhbgcnanm", '_blank');
+      }, 1500)
+    }
+  }
 
   getTime = function() {
     let dt = new Date();
@@ -149,11 +154,7 @@ class Message extends Component {
   };
 
   getAvatarSrc() {
-    if (this.props.message.author !== "user") {
-      return `${STATIC_URL}img/demo/${this.props.message.author}.png`
-    } else {
-      return "";
-    }
+    return `${STATIC_URL}img/demo/${this.props.message.author}.png`
   }
 
   async handleLinkClick(event) {
@@ -170,6 +171,25 @@ class Message extends Component {
   render() {
     const emoji_converter = new EmojiConvertor();
     const emoji_output = emoji_converter.replace_colons(this.props.message.content);
+
+    const SpanInsteadOfP = ({ children, ...props }) => (
+        <span {...props}>{children}</span>
+    );
+
+    const Twitter = ({ children}) => (
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName={"" + children[0]}
+          options={{height: 300}}
+        />
+    );
+
+    const Tweet = ({ children}) => (
+      <TwitterTweetEmbed
+        tweetId={"" + children[0]}
+      />
+    );
+
 
     return (
       <div className={`message-box ${this.props.isFirst ? `first` : ""}`}>
@@ -194,10 +214,19 @@ class Message extends Component {
                           copybox: {
                             component: Copybox,
                           },
+                          twitter: {
+                            component: Twitter,
+                          },
+                          tweet: {
+                            component: Tweet
+                          },
                           a: {
                             props: {
                               target: "_blank"
                             }
+                          },
+                          p: {
+                            component: SpanInsteadOfP
                           }
                         },
                       }}

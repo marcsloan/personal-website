@@ -175,6 +175,18 @@
     background: #1da1f2 !important;
   }
 
+  &.google {
+    background: #0F9D58 !important;
+  }
+
+  &.googlemaps {
+    background: #4A89F3 !important;
+  }
+
+  &.googlescholar {
+    background: #245de7 !important;
+  }
+
   &.youtube {
     background: #ff0000
   }
@@ -216,6 +228,18 @@
 
 .message.received.first.twitter:after {
   border-color: transparent #1da1f2 transparent transparent;
+}
+
+.message.received.first.google:after {
+  border-color: transparent #0F9D58 transparent transparent !important;
+}
+
+.message.received.first.googlemaps:after {
+  border-color: transparent #4A89F3 transparent transparent !important;
+}
+
+.message.received.first.googlescholar:after {
+  border-color: transparent #245de7 transparent transparent !important;
 }
 
 .message.received.first.youtube:after {
@@ -485,4 +509,29 @@
       }
     }
   }
+}
+
+.message blockquote img {
+  float: left;
+  margin-right: 20px;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.message blockquote {
+  color: $faded-white-text;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 0 0 0 15px;
+  border-left: 3px solid $faded-white-text;
+  float: left;
+  font-size: 12px;
+  max-width: 274px;
+  font-style: normal;
+  background-color: transparent;
+}
+
+.message iframe {
+  width: 250px;
 }

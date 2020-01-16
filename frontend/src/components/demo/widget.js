@@ -3,6 +3,7 @@ import React from "react";
 import "../../sass/widget.scss";
 import {MessageContainer} from "./messageContainer";
 import {SCRIPT} from "./chatScript";
+import min from "ramda/src/min";
 
 
 export class Widget extends React.Component {
@@ -25,12 +26,43 @@ export class Widget extends React.Component {
       }
 
     componentDidMount() {
-        this.transmitMessages('intro')
+        this.transmitMessages("Go back to start")
+    }
+
+    async handleButtonClick(button){
+        this.setState({
+            buttons: [],
+            chatLog: this.state.chatLog.concat({
+                author: "user",
+                content: button,
+                type: "message"
+            }),
+            dropdowns: [],
+            loading: true
+        })
+        this.transmitMessages(button)
+    }
+
+    async handleDropdownChange(dropdown){
+        this.setState({
+            buttons: [],
+            chatLog: this.state.chatLog.concat({
+                author: "user",
+                content: dropdown,
+                type: "message"
+            }),
+            dropdowns: [],
+            loading: true
+        })
+        this.transmitMessages(dropdown)
     }
 
     async transmitMessages(button){
-        const LOADING_WAIT_TIME = 1000;
-        const CHARACTER_WAIT_TIME = 50;
+        const LOADING_WAIT_TIME = 700;
+        const CHARACTER_WAIT_TIME = 40;
+
+        // const LOADING_WAIT_TIME = 10;
+        // const CHARACTER_WAIT_TIME = 1;
 
         const transcript = SCRIPT[button]
         const numMessages = transcript.chatLog.length;
@@ -39,7 +71,7 @@ export class Widget extends React.Component {
         let waitTimes = []
         for (let i = 0; i < numMessages; i++){
             waitTimes.push((i == 0 ? 0 : waitTimes[i-1]) + LOADING_WAIT_TIME +
-                transcript.chatLog[i].content.length * CHARACTER_WAIT_TIME)
+                min(transcript.chatLog[i].content.length * CHARACTER_WAIT_TIME, 2000))
         }
 
         for (let i = 0; i < numMessages; i++){
@@ -60,21 +92,15 @@ export class Widget extends React.Component {
         setTimeout(function(){
             this.setState({
                 buttons:  transcript.buttons,
-                dropdown: transcript.dropdowns
+                dropdowns: transcript.dropdowns
             })
         }.bind(this), waitTimes[waitTimes.length - 1])
     }
 
     render() {
 
-        // let loading = false;
-        //
-        // let buttons = ["wtf is in-browser AI?", "Tell me more about you"]
-        // let dropdowns = [{
-        //         "name": "",
-        //         "text": "Dropdown text",
-        //         options: [{"label": "Twitter", "key": "", "value": ""}, {"label": "Reddit", "key": "", "value": ""}]
-        //     }]
+        const handleButtonClick = this.handleButtonClick.bind(this);
+        const handleDropdownChange = this.handleDropdownChange.bind(this);
 
         return (
             <div className="widget-bot-and-chat">
@@ -83,6 +109,7 @@ export class Widget extends React.Component {
                         <div className="message-container">
                             <MessageContainer global={this.props.global} chatLog={this.state.chatLog} loading={this.state.loading}
                                               buttons={this.state.buttons} dropdowns={this.state.dropdowns}
+                                              handleClick={handleButtonClick} handleChange={handleDropdownChange}
                             />
                         </div>
                     </div>
