@@ -116,19 +116,43 @@ export const SCRIPT = {
                 type: "message"
             },
             {
+                author: "scout",
+                content: "Finding directions to gig venues when you're buying tickets on **ticketmaster**",
+                type: "message"
+            },
+            {
                 author: "googlemaps",
-                content: "**ticketmaster.co.uk** <br> Here are the directions to **Pearl Jam** at _Hyde Park_ <iframe src='https://maps.google.com/?saddr=Hyde%20Park%2C%20London&daddr=51.5044771999999966,-0.0821610000000000&output=embed' frameborder='0' style='border:0' allowfullscreen></iframe>",
+                content: "Here are the directions to **Pearl Jam** at _Hyde Park_ <br><br><iframe src='https://maps.google.com/?saddr=Hyde%20Park%2C%20London&daddr=51.5044771999999966,-0.0821610000000000&output=embed' frameborder='0' style='border:0' allowfullscreen></iframe>",
+                type: "message"
+            },
+            {
+                author: "scout",
+                content: "Or showing you the top tweets about the news article you're reading, such as:",
+                type: "message"
+            },
+            {
+                author: "user",
+                content: "Currently reading: <br> <blockquote> ![Are we on the cusp of an ‘AI winter’?](https://ichef.bbci.co.uk/news/1024/branded_news/136BA/production/_110464597_atlas.jpg) ** BBC News ** <a href='https://www.bbc.co.uk/news/technology-51064369' target='_blank'>Are we on the cusp of an ‘AI winter’?</a> <br>AI researchers admit that the hype around AI may be cooling off once again. </blockquote>",
                 type: "message"
             },
             {
                 author: "twitter",
-                // content: "**bbc.co.uk** <br> Here's what people are saying online about <br> <blockquote> ![Are we on the cusp of an ‘AI winter’?](https://ichef.bbci.co.uk/news/1024/branded_news/136BA/production/_110464597_atlas.jpg) ** BBC News ** <a href='https://www.bbc.co.uk/news/technology-51064369' target='_blank'>Are we on the cusp of an ‘AI winter’?</a> <br>AI researchers admit that the hype around AI may be cooling off once again. </blockquote><br><iframe border='0' frameborder='0' height='350' width='100%' src='https://twitframe.com/show?url=https://twitter.com/senseaboutsci/status/1216769557215485952'></iframe>",
-                content: "**bbc.co.uk** <br> Here's what people are saying online about <br> <blockquote> ![Are we on the cusp of an ‘AI winter’?](https://ichef.bbci.co.uk/news/1024/branded_news/136BA/production/_110464597_atlas.jpg) ** BBC News ** <a href='https://www.bbc.co.uk/news/technology-51064369' target='_blank'>Are we on the cusp of an ‘AI winter’?</a> <br>AI researchers admit that the hype around AI may be cooling off once again. </blockquote><br><tweet>1216769557215485952</tweet>",
+                content: "<tweet>1216769557215485952</tweet><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>",
+                type: "message"
+            },
+            {
+                author: "scout",
+                content: "Or when you're watching a film trailer on **YouTube**, we can find the background music for you on Spotify",
+                type: "message"
+            },
+            {
+                author: "user",
+                content: "Watching **GUARDIANS OF THE GALAXY 2 Trailer (2017)**<br><br><iframe src='https://www.youtube.com/embed/jQFIu9InG7Q' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'></iframe>",
                 type: "message"
             },
             {
                 author: "spotify",
-                content: "**youtube.com** <br>Listen to the song from this YouTube video on Spotify <br> <blockquote> ** YouTube ** <a href='https://www.youtube.com/watch?v=jQFIu9InG7Q' target='_blank'>GUARDIANS OF THE GALAXY 2 Trailer (2017)</a> _1:38_</blockquote><br><iframe src='https://open.spotify.com/embed/track/23QyZNbiKujRQjE4omMvRi' width='300' height='80' frameborder='0' allow='encrypted-media'></iframe>",
+                content: "Playing **Fox on the Run** by **Sweet**<br><br><iframe src='https://open.spotify.com/embed/track/23QyZNbiKujRQjE4omMvRi' width='300' height='80' frameborder='0' allow='encrypted-media'></iframe>",
                 type: "message"
             },
             {

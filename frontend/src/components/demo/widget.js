@@ -71,7 +71,7 @@ export class Widget extends React.Component {
 
     async transmitMessages(button){
         const LOADING_WAIT_TIME = 700;
-        const CHARACTER_WAIT_TIME = 40;
+        const CHARACTER_WAIT_TIME = 50;
 
         // const LOADING_WAIT_TIME = 10;
         // const CHARACTER_WAIT_TIME = 1;
@@ -83,7 +83,7 @@ export class Widget extends React.Component {
         let waitTimes = []
         for (let i = 0; i < numMessages; i++){
             waitTimes.push((i == 0 ? 0 : waitTimes[i-1]) + LOADING_WAIT_TIME +
-                min(transcript.chatLog[i].content.length * CHARACTER_WAIT_TIME, 2000))
+                min(transcript.chatLog[i].content.length * CHARACTER_WAIT_TIME, 2500))
         }
 
         for (let i = 0; i < numMessages; i++){

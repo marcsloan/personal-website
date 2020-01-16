@@ -183,6 +183,11 @@ class Message extends Component {
     const Tweet = ({ children}) => (
       <TwitterTweetEmbed
         tweetId={"" + children[0]}
+        options={{
+               cards: 'hidden',
+               conversation: 'none',
+               width: '100%',
+           }}
       />
     );
 
