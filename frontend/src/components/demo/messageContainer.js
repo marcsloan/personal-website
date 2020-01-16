@@ -6,6 +6,7 @@ import ScrollToBottom from "react-scroll-to-bottom";
 import ReactTooltip from "react-tooltip";
 import $ from "jquery";
 import Markdown from 'markdown-to-jsx';
+import "../../sass/messagecontainer.scss";
 import { TwitterTimelineEmbed, TwitterTweetEmbed} from 'react-twitter-embed';
 
 export const CHAT_SIZE = {
