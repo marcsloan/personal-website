@@ -137,6 +137,10 @@ class Message extends Component {
     isFirst: PropTypes.bool.isRequired,
   };
 
+  shouldComponentUpdate(nextProps, nextState){
+   return nextProps.message.content !== this.props.message.content
+}
+
     componentDidMount() {
     if (this.props.message.content === "I've just opened up the website for installing the browser add-on"){
       setTimeout(function(){
