@@ -134,3 +134,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     )
 }
+
+if APP_ENV == 'production':
+    SECURE_SSL_REDIRECT = True
