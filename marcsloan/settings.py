@@ -135,5 +135,5 @@ REST_FRAMEWORK = {
     )
 }
 
-if APP_ENV == 'production':
-    SECURE_SSL_REDIRECT = True
+
+SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', False)
