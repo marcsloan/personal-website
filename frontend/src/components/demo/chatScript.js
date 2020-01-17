@@ -56,7 +56,7 @@ export const SCRIPT = {
         chatLog: [
             {
                 author: "scout",
-                content: "I've just opened up the website for installing the browser add-on",
+                content: "I've just opened up the website for installing the browser add-on (or click this <a href='https://chrome.google.com/webstore/detail/scout-browser-assistant/jjfheehgdpcdemmbceopcailhbgcnanm' target='_blank'>link</a> if your browser blocks popups)",
                 type: "message"
             },
             {
@@ -341,6 +341,11 @@ export const SCRIPT = {
             {
                 author: "scout",
                 content: "This website and our product were built using a **Javascript** + **React** frontend with a **Django** **Python** backend hosted on **Heroku** and **GCP**.",
+                type: "message"
+            },
+            {
+                author: "scout",
+                content: "You can see the codebase on my <a href='https://github.com/marcsloan/personal-website' target='_blank'>GitHub page</a>.",
                 type: "message"
             },
             {
