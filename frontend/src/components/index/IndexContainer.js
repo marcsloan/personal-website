@@ -26,7 +26,7 @@ class IndexContainer extends Component {
                             hiring, firing, testing and designing. I’ve written extensively about what went right and what
                             went wrong, and what I learned from it. Have a read, I hope you can learn something too.</p>
                         <div className="small-spacer"/>
-                        <a href="/" target="_blank" className="blog-button-link">
+                        <a href="http://blog.marcsloan.ai/" target="_blank" className="blog-button-link">
                             <div className="blog-button">
                                 Go to Blog
                             </div>
