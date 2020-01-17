@@ -70,11 +70,11 @@ export class Widget extends React.Component {
       };
 
     async transmitMessages(button){
-        // const LOADING_WAIT_TIME = 700;
-        // const CHARACTER_WAIT_TIME = 50;
+        const LOADING_WAIT_TIME = 700;
+        const CHARACTER_WAIT_TIME = 50;
 
-        const LOADING_WAIT_TIME = 10;
-        const CHARACTER_WAIT_TIME = 1;
+        // const LOADING_WAIT_TIME = 10;
+        // const CHARACTER_WAIT_TIME = 1;
 
         const transcript = SCRIPT[button]
         const numMessages = transcript.chatLog.length;

@@ -109,7 +109,13 @@ export const SCRIPT = {
                 author: "scout",
                 content: "And so on... :nerd_face:",
                 type: "message"
-            },
+            }
+        ],
+        buttons: ["What else could it do?"],
+        dropdowns: [],
+    },
+    "What else could it do?": {
+        chatLog: [
             {
                 author: "scout",
                 content: "We had it working on all sorts of websites like **Amazon**, **Ticketmaster**, **BBC** and doing all sorts of things like:",
