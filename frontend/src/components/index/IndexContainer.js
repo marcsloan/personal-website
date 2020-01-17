@@ -25,18 +25,18 @@ class IndexContainer extends Component {
                             href="https://www.crunchbase.com/organization/context-scout" target="_blank">fundraising</a>,
                             hiring, firing, testing and designing. I’ve written extensively about what went right and what
                             went wrong, and what I learned from it. Have a read, I hope you can learn something too.</p>
-                        <div className="small-spacer"/>
+                        <div className="medium-spacer"/>
                         <a href="http://blog.marcsloan.ai/" target="_blank" className="blog-button-link">
                             <div className="blog-button">
                                 Go to Blog
                             </div>
                         </a>
-                        <div className="small-spacer"/>
+                        <div className="medium-spacer"/>
                         <p>The concept sprung from my 5 years of research into dynamic information retrieval at UCL and
                             Microsoft Research, and I started working on it with Andrew O’Harney who I met on Entrepreneur
                             First. You should also <a href="http://andrewoharney.com/" target="_blank">check him
                                 out</a> too, he’s great. </p>
-                        <div className="small-spacer"/>
+                        <div className="medium-spacer"/>
                     </div>
                 </div>
             </div>
