@@ -2,34 +2,44 @@
 <html>
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MHWVVJQ');</script>
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MHWVVJQ');</script>
     <!-- End Google Tag Manager -->
-<meta name="google-site-verification" content="Uxv6TkTSdQdLAuICQvDlRV2EFIWfmsGEQTU61JP3i6I" />
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="Uxv6TkTSdQdLAuICQvDlRV2EFIWfmsGEQTU61JP3i6I"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/static/img/favicon_io/site.webmanifest">
-  <title>Hi, I'm Marc Sloan</title>
+    <title>Hi, I'm Marc Sloan</title>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHWVVJQ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHWVVJQ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <script>
-        {#window.GLOBALS = {{ globals | safe }}#}
-        window.GLOBALS = {'STATIC_URL': '/static/'}
-    </script>
-    <div class="react-container">
-          <div id="react">{{ title }}</div>
-    </div>
+<script>
+    {#window.GLOBALS = {{ globals | safe }}#}
+    window.GLOBALS = {'STATIC_URL': '/static/'}
+</script>
+<div class="react-container">
+    <div id="react">{{ title }}</div>
+</div>
 </body>
 {% load static %}
 <script src="{% static "frontend/main.js" %}"></script>

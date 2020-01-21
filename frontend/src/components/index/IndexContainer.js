@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import NavContainer from "../pageElements/NavContainer"
-import FooterContainer from "../pageElements/FooterContainer"
+import NavContainer from "../borders/NavContainer"
+import FooterContainer from "../borders/FooterContainer"
 import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import "../../sass/index.scss"
@@ -89,7 +89,6 @@ class IndexContainer extends Component {
                             <div className="demo">
                                 <Widget global={this.props.global}/>
                             </div>
-                            {/*<img className="demo" src={this.props.global.STATIC_URL + "img/index/screenshot.png"}/>*/}
                         </div>
                     </div>
                 </div>
@@ -106,13 +105,6 @@ class IndexContainer extends Component {
         )
     }
 }
-
-// const mapStateToProps = state => {
-//     return {
-//         global: state.global,
-//         ...state,
-//     }
-// }
 
 const mapStateToProps = dispatch => {
     return {}

@@ -1,18 +1,18 @@
 @import "./variables.scss";
 
-.footer-content{
+.footer-content {
   background: $footer-grey;
   z-index: 10000000;
   position: relative;
 
-  .social-icons{
-   display: flex;
+  .social-icons {
+    display: flex;
     margin: 0 auto;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 
-    img{
+    img {
       max-height: 22px;
       margin: 10px 15px 0 15px;
     }

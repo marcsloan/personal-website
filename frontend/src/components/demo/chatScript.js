@@ -100,7 +100,7 @@ export const SCRIPT = {
                 content: "Find alternative price",
                 type: "message"
             },
-                                                {
+            {
                 author: "google",
                 content: "** Jessops ** - _£329.00_<blockquote>\n ![Olympus OM-D E-M10 Mark II Compact System Camera in Silver with 14-42mm Lens](https://i.jessops.com/ce-images/PRODUCT/PRODUCT_ENLARGED/AOLYMCM185282693.jpg?image=600)\n** jessops.com **\n <a target='_blank' href='https://www.jessops.com/p/olympus/om-d-e-m10-mark-ii-compact-system-camera-in-silver-with-14-42mm-lens-98019'>Olympus OM-D E-M10 Mark II Compact System Camera in Silver with 14-42mm Lens</a> \n</blockquote>",
                 type: "message"
@@ -195,7 +195,7 @@ export const SCRIPT = {
             },
             {
                 author: "scout",
-                content: "Seriously though, if you'd like to share with me what you think sucks about this I'd love to hear, contact me here <copybox>marc@contextscout.com</copybox>",
+                content: "Seriously though, if you'd like to share with me what you think sucks about this I'd love to hear, contact me here <copybox>hi@marcsloan.com</copybox>",
                 type: "message"
             },
         ],
@@ -229,7 +229,7 @@ export const SCRIPT = {
                     {"label": "the technology you used", "key": "1", "value": ""},
                     {"label": "your research", "key": "2", "value": ""},
                     {"label": "your personal life", "key": "3", "value": ""}
-                    ]
+                ]
             }
         ],
     },
@@ -255,7 +255,7 @@ export const SCRIPT = {
                     {"label": "the technology you used", "key": "1", "value": ""},
                     {"label": "your research", "key": "2", "value": ""},
                     {"label": "your personal life", "key": "3", "value": ""}
-                    ]
+                ]
             }
         ],
     },
@@ -300,7 +300,7 @@ export const SCRIPT = {
                 options: [
                     {"label": "the technology you used", "key": "1", "value": ""},
                     {"label": "your personal life", "key": "3", "value": ""}
-                    ]
+                ]
             }
         ],
     },
@@ -338,7 +338,7 @@ export const SCRIPT = {
                 options: [
                     {"label": "the technology you used", "key": "1", "value": ""},
                     {"label": "your personal life", "key": "3", "value": ""}
-                    ]
+                ]
             }
         ],
     },
@@ -368,7 +368,7 @@ export const SCRIPT = {
                 options: [
                     {"label": "your research", "key": "2", "value": ""},
                     {"label": "your personal life", "key": "3", "value": ""}
-                    ]
+                ]
             }
         ],
     },
@@ -376,7 +376,7 @@ export const SCRIPT = {
         chatLog: [
             {
                 author: "scout",
-                content: "Sure, here's my email address <copybox>marc@contextscout.com</copybox>",
+                content: "Sure, here's my email address <copybox>hi@marcsloan.com</copybox>",
                 type: "message"
             },
         ],
@@ -389,7 +389,7 @@ export const SCRIPT = {
                     {"label": "the technology you used", "key": "1", "value": ""},
                     {"label": "your research", "key": "2", "value": ""},
                     {"label": "your personal life", "key": "3", "value": ""}
-                    ]
+                ]
             }
         ],
     },
@@ -444,7 +444,7 @@ export const SCRIPT = {
                 options: [
                     {"label": "the technology you used", "key": "1", "value": ""},
                     {"label": "your research", "key": "2", "value": ""},
-                    ]
+                ]
             }
         ],
     }
