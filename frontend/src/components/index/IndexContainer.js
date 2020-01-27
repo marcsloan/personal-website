@@ -52,7 +52,7 @@ class IndexContainer extends Component {
                             <div className="large-spacer"/>
                             <div className="index-message-box justify-content-center">
                                 <img className="index-message-avatar"
-                                     src={this.props.global.STATIC_URL + "img/index/avatar.jpeg"}/>
+                                     src={this.props.global.STATIC_URL + "img/index/avatar-white.png"}/>
                                 <div className="index-message">
                                     <span>Hi, I'm Marc Sloan</span>
                                 </div>
@@ -66,8 +66,8 @@ class IndexContainer extends Component {
                                             href="https://scholar.google.com/citations?user=17C0-A0AAAAJ&hl=en"
                                             target="_blank">academic</a>, <a href="https://github.com/marcsloan"
                                                                              target="_blank">developer</a> and <a
-                                            href="https://dribbble.com/marcsloan" target="_blank">designer</a> who
-                                            thinks a lot about the future of the web and AI. I created a technology
+                                            href="https://dribbble.com/marcsloan" target="_blank">designer</a>,
+                                            ruminating on AI and the future of the internet. I created a technology
                                             called <a href="https://www.contextscout.com/"
                                                       target="_blank">Scout</a> that offers real-time virtual assistance
                                             while browsing online. It’s over there, go ahead, you can play around with
