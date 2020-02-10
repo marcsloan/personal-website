@@ -81,24 +81,9 @@
       color: $link;
     }
   }
-}
 
-.big-arrow {
-  display: flex;
-
-  .arrow-shaft {
-    width: 100%;
-    height: 70px;
-    background-color: $white;
-    align-self: center
-  }
-
-  .arrow-right {
-    width: 0;
-    height: 0;
-    border-top: 70px solid transparent;
-    border-bottom: 70px solid transparent;
-    border-left: 150px solid $white;
+  .second-half{
+    padding-top: 1rem;
   }
 }
 
@@ -157,7 +142,7 @@ $arrow-angle: 35deg;
   position: relative;
   background: $white;
   width: $arrow-width;
-  height: 60px;
+  height: $arrow-height;
   border-bottom-right-radius: $arrow-radius;
   border-top-right-radius: $arrow-radius;
   transform-origin: right center;
@@ -174,11 +159,11 @@ $arrow-angle: 35deg;
     display: block;
     content: "";
     position: absolute;
-    right: -170px;
+    right: -140px;
     background: $white;
-    width: 200px;
-    height: 70px;
-    transform-origin: $arrow-width/20 center;
+    width: 170px;
+    height: $arrow-height;
+    transform-origin: $arrow-height/2 center;
     border-radius: $arrow-radius;
   }
 }
