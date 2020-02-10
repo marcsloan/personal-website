@@ -50,40 +50,45 @@ class IndexContainer extends Component {
                     <div className="row">
                         <div className="col-lg-7 index-content">
                             <div className="large-spacer"/>
-                            <div className="index-message-box justify-content-center">
-                                <img className="index-message-avatar"
+                            <div className="row">
+                                <div className="col-3 text-right">
+                                    <img className="index-message-avatar"
                                      src={this.props.global.STATIC_URL + "img/index/avatar-white.png"}/>
-                                <div className="index-message">
-                                    <span>Hi, I'm Marc Sloan</span>
                                 </div>
-                            </div>
-                            <div className="small-spacer"/>
-                            <div className="container">
-                                <div className="row justify-content-center">
-                                    <div className="col-md-6 col-md-offset-2 text-justified">
-                                        <p>I’m a product manager, <a href="https://angel.co/marc-sloan"
-                                                                     target="_blank">entrepreneur</a>, <a
-                                            href="https://scholar.google.com/citations?user=17C0-A0AAAAJ&hl=en"
-                                            target="_blank">academic</a>, <a href="https://github.com/marcsloan"
-                                                                             target="_blank">developer</a> and <a
-                                            href="https://dribbble.com/marcsloan" target="_blank">designer</a>,
-                                            ruminating on AI and the future of the internet. I created a technology
-                                            called <a href="https://www.contextscout.com/"
-                                                      target="_blank">Scout</a> that offers real-time virtual assistance
-                                            while browsing online. It’s over there, go ahead, you can play around with
-                                            it. </p>
+                                <div className="col-8">
+                                    <div className="index-message-box justify-content-center">
+                                        <div className="index-message">
+                                            <span>Hi, I'm Marc Sloan</span>
+                                        </div>
+                                    </div>
+                                    <div className="small-spacer"/>
+                                    <div className="container">
+                                        <div className="row justify-content-center">
+                                            <div className="col-md-12 text-justified">
+                                                <p>I’m a product manager, <a href="https://angel.co/marc-sloan"
+                                                                             target="_blank">entrepreneur</a>, <a
+                                                    href="https://scholar.google.com/citations?user=17C0-A0AAAAJ&hl=en"
+                                                    target="_blank">academic</a>, <a href="https://github.com/marcsloan"
+                                                                                     target="_blank">developer</a> and <a
+                                                    href="https://dribbble.com/marcsloan" target="_blank">designer</a>,
+                                                    ruminating on AI and the future of the internet. I created a technology
+                                                    called <a href="https://www.contextscout.com/"
+                                                              target="_blank">Scout</a> that offers real-time virtual assistance
+                                                    while browsing online. It’s over there, go ahead, you can play around with
+                                                    it. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="small-spacer"/>
+                                    <div className="arrow d-none d-lg-block">
+                                        {/*Hidden on md and below*/}
+                                    </div>
+                                    <div className="medium-spacer d-none d-lg-block"/>
+                                    <div className="d-none d-lg-block">
+                                        {bottomHalfOfPage}
                                     </div>
                                 </div>
                             </div>
-                            <div className="small-spacer"/>
-                            <div className="arrow d-none d-lg-block">
-                                {/*Hidden on md and below*/}
-                            </div>
-                            <div className="medium-spacer d-none d-lg-block"/>
-                            <div className="d-none d-lg-block">
-                                {bottomHalfOfPage}
-                            </div>
-
                         </div>
                         <div className="col-lg-5">
                             <div className="demo">
