@@ -22,8 +22,8 @@ class IndexContainer extends Component {
                 <div className="col-3"></div>
                 <div className="col-8">
                     <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-md-12 text-justified">
+                        <div className="row justify-content-start">
+                            <div className="col-md-9 text-justified">
                                 <p>To build it I spent 4 years developing, <a
                                     href="https://www.crunchbase.com/organization/context-scout"
                                     target="_blank">fundraising</a>,
@@ -73,8 +73,8 @@ class IndexContainer extends Component {
                                     </div>
                                     <div className="small-medium-spacer"/>
                                     <div className="container">
-                                        <div className="row justify-content-center">
-                                            <div className="col-md-12 text-justified">
+                                        <div className="row justify-content-start">
+                                            <div className="col-md-9 text-justified">
                                                 <p>I’m a product manager, <a href="https://angel.co/marc-sloan"
                                                                              target="_blank">entrepreneur</a>, <a
                                                     href="https://scholar.google.com/citations?user=17C0-A0AAAAJ&hl=en"
