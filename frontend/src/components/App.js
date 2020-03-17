@@ -20,6 +20,7 @@ import sessionStorage from "redux-persist/es/storage/session"
 import thunk from "redux-thunk"
 import AppReducer from "../reducers/index"
 import PropTypes from "prop-types"
+import DemoIndex from "./DemoIndex/DemoIndex";
 
 const persistConfig = {
     key: "root",
@@ -42,7 +43,10 @@ class RootContainerComponent extends React.Component {
                 <Switch>
                     <Route exact path="/"  render={(routeProps) => (
                         <IndexContainer {...routeProps} global={this.props.global} />)} />>
-  )}/>
+                    )}/>
+                    <Route exact path="/demo/"  render={(routeProps) => (
+                        <DemoIndex {...routeProps} global={this.props.global} />)} />>
+                    )}/>
                 </Switch>
             </BrowserRouter>
         )
