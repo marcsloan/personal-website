@@ -27,6 +27,7 @@ export class MessageContainer extends Component {
         handleClick: PropTypes.func.isRequired,
         handleChange: PropTypes.func.isRequired,
         defaultAuthor: PropTypes.string.isRequired,
+        ga: PropTypes.object.isRequired,
     };
 
     constructor(props) {
@@ -45,6 +46,10 @@ export class MessageContainer extends Component {
     }
 
     handleClick = async function (buttonText) {
+        this.props.ga.event({
+          category: this.props.defaultAuthor,
+          action: buttonText,
+        });
         this.props.handleClick(buttonText)
     };
 
@@ -54,6 +59,10 @@ export class MessageContainer extends Component {
         }
         let value = event[0].label;
         if (value) {
+            this.props.ga.event({
+              category: this.props.defaultAuthor,
+              action: text + ' ' + value,
+            });
             this.props.handleChange(text + ' ' + value)
         }
     };
@@ -266,20 +275,18 @@ class Copybox extends Component {
     }
 
     async handleCopyClick() {
-        copyToClipboard(React.getInnerText(this));
+        let copyText = React.getInnerText(this)
+        copyToClipboard(copyText);
+
+        this.props.ga.event({
+          category: this.props.defaultAuthor,
+          action: "Copied: " + copyText,
+        });
 
         this.setState({copied: true});
         await timeout(2000);
         this.setState({copied: false});
 
-        // Keep for GA reporting
-        // dispatchToBackground("sendAnalyticsEvent",
-        //   {
-        //     "event_type": "extension_interaction",
-        //     "interaction_type": "copy_click",
-        //     "url": window.location.href
-        //   }
-        // );
     }
 
     getCopyText() {

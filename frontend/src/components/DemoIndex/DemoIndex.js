@@ -8,6 +8,7 @@ import {SCRIPT} from "../demo/scripts/blogScript";
 class IndexContainer extends Component {
     static propTypes = {
         global: PropTypes.object.isRequired,
+        ga: PropTypes.object.isRequired,
     }
 
     componentDidMount() {
@@ -18,7 +19,7 @@ class IndexContainer extends Component {
         return (
             <div className="demoindex">
                 <Widget global={this.props.global} script={SCRIPT}
-                        openingMessage={"Hi, I'm a conversational browser"} openingAuthor={"robot"}/>
+                        openingMessage={"Hi, I'm a conversational browser"} openingAuthor={"robot"} ga={this.props.ga}/>
             </div>
         )
     }

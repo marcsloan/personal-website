@@ -22,6 +22,11 @@ import AppReducer from "../reducers/index"
 import PropTypes from "prop-types"
 import DemoIndex from "./DemoIndex/DemoIndex";
 
+import ReactGA from 'react-ga';
+
+const trackingId = "UA-156408401-1"; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
+
 const persistConfig = {
     key: "root",
     storage: sessionStorage,
@@ -42,10 +47,10 @@ class RootContainerComponent extends React.Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/"  render={(routeProps) => (
-                        <IndexContainer {...routeProps} global={this.props.global} />)} />>
+                        <IndexContainer {...routeProps} global={this.props.global} ga={ReactGA}/>)} />>
                     )}/>
                     <Route exact path="/demo/"  render={(routeProps) => (
-                        <DemoIndex {...routeProps} global={this.props.global} />)} />>
+                        <DemoIndex {...routeProps} global={this.props.global} ga={ReactGA}/>)} />>
                     )}/>
                 </Switch>
             </BrowserRouter>

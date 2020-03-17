@@ -11,6 +11,7 @@ export class Widget extends React.Component {
         script: PropTypes.object.isRequired,
         openingMessage: PropTypes.string.isRequired,
         openingAuthor: PropTypes.string.isRequired,
+        ga: PropTypes.object.isRequired,
     };
 
     constructor(props) {
@@ -134,7 +135,7 @@ export class Widget extends React.Component {
                                               loading={this.state.loading}
                                               buttons={this.state.buttons} dropdowns={this.state.dropdowns}
                                               handleClick={handleButtonClick} handleChange={handleDropdownChange}
-                                              defaultAuthor={this.props.openingAuthor}
+                                              defaultAuthor={this.props.openingAuthor} ga={this.props.ga}
                             />
                         </div>
                     </div>

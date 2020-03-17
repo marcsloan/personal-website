@@ -10,6 +10,7 @@ import {SCRIPT} from "../demo/scripts/chatScript";
 class IndexContainer extends Component {
     static propTypes = {
         global: PropTypes.object.isRequired,
+        ga: PropTypes.object.isRequired,
     }
 
     componentDidMount() {
@@ -107,7 +108,7 @@ class IndexContainer extends Component {
                         <div className="col-lg-5">
                             <div className="demo">
                                 <Widget global={this.props.global} script={SCRIPT}
-                                        openingMessage={"Hi, I'm Marc Sloan"} openingAuthor={"scout"}/>
+                                        openingMessage={"Hi, I'm Marc Sloan"} openingAuthor={"scout"} ga={this.props.ga}/>
                             </div>
                         </div>
                     </div>
