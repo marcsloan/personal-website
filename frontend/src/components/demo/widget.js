@@ -2,21 +2,23 @@ import PropTypes from "prop-types";
 import React from "react";
 import "../../sass/widget.scss";
 import {MessageContainer} from "./messageContainer";
-import {SCRIPT} from "./chatScript";
 import min from "ramda/src/min";
 
 
 export class Widget extends React.Component {
     static propTypes = {
         global: PropTypes.object.isRequired,
+        script: PropTypes.object.isRequired,
+        openingMessage: PropTypes.string.isRequired,
+        openingAuthor: PropTypes.string.isRequired,
     };
 
     constructor(props) {
         super(props);
         this.state = {
             chatLog: [{
-                author: "scout",
-                content: "Hi, I'm Marc Sloan",
+                author: this.props.openingAuthor,
+                content: this.props.openingMessage,
                 type: "message",
                 timestamp: this.getTime()
             }],
@@ -77,7 +79,7 @@ export class Widget extends React.Component {
 
         const MAX_MESSAGE_WAIT_TIME = 2500;
 
-        const transcript = SCRIPT[button]
+        const transcript = this.props.script[button]
         const numMessages = transcript.chatLog.length;
 
         // the idea here is to schedule all messages so that they appear one after the other
@@ -132,6 +134,7 @@ export class Widget extends React.Component {
                                               loading={this.state.loading}
                                               buttons={this.state.buttons} dropdowns={this.state.dropdowns}
                                               handleClick={handleButtonClick} handleChange={handleDropdownChange}
+                                              defaultAuthor={this.props.openingAuthor}
                             />
                         </div>
                     </div>

@@ -174,7 +174,12 @@ export const SCRIPT = {
         chatLog: [
             {
                 author: "scout",
-                content: "Thanks, we thought so too. However, getting it out to market proved harder than we thought. I've written more about why this is the case in my <a href='https://blog.marcsloan.ai' target='_blank'>blog</a>.",
+                content: "Thanks, we thought so too. However, getting it out to market proved harder than we thought.",
+                type: "message"
+            },
+            {
+                author: "scout",
+                content: "I've written more about the thinking behind the design of this chatbot in my recent blog post<br> <blockquote> ![What if web browsers could talk?](https://blog.marcsloan.ai/content/images/size/w2000/2020/03/Banner-5.png) ** <a href='https://blog.marcsloan.ai/what-if-your-web-browser-could-talk/' target='_blank'>What if web browsers could talk?</a>** <br>A speculative vision for a conversational web browser that chats to you and assists you while you're online</blockquote>",
                 type: "message"
             },
         ],
@@ -191,6 +196,11 @@ export const SCRIPT = {
             {
                 author: "scout",
                 content: "Well we thought it was a cool idea, but we did also have a hard time getting it out to market, so perhaps you are right.",
+                type: "message"
+            },
+            {
+                author: "scout",
+                content: "I've written more about why it was built this way in my recent blog post<br> <blockquote> ![What if web browsers could talk?](https://blog.marcsloan.ai/content/images/size/w2000/2020/03/Banner-5.png) ** <a href='https://blog.marcsloan.ai/what-if-your-web-browser-could-talk/' target='_blank'>What if web browsers could talk?</a>** <br>A speculative vision for a conversational web browser that chats to you and assists you while you're online</blockquote>",
                 type: "message"
             },
             {

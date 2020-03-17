@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import "../../sass/demoindex.scss"
 import {Widget} from "../demo/widget";
+import {SCRIPT} from "../demo/scripts/blogScript";
 
 class IndexContainer extends Component {
     static propTypes = {
@@ -13,21 +14,11 @@ class IndexContainer extends Component {
         window.scrollTo(0, 0);
     }
 
-            //     <div className="index">
-            //     <div className="container index-container">
-            //         <div className="row">
-            //             <div className="col-lg-5">
-            //                 <div className="demo">
-            //                     <Widget global={this.props.global}/>
-            //                 </div>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div>
     render() {
         return (
             <div className="demoindex">
-                <Widget global={this.props.global}/>
+                <Widget global={this.props.global} script={SCRIPT}
+                        openingMessage={"Hi, I'm a conversational browser"} openingAuthor={"robot"}/>
             </div>
         )
     }

@@ -25,7 +25,8 @@ export class MessageContainer extends Component {
         dropdowns: PropTypes.array.isRequired,
         loading: PropTypes.bool.isRequired,
         handleClick: PropTypes.func.isRequired,
-        handleChange: PropTypes.func.isRequired
+        handleChange: PropTypes.func.isRequired,
+        defaultAuthor: PropTypes.string.isRequired,
     };
 
     constructor(props) {
@@ -97,10 +98,10 @@ export class MessageContainer extends Component {
                             this.props.loading ? (<Message
                                 global={this.props.global}
                                 message={{
-                                    author: "scout",
+                                    author: this.props.defaultAuthor,
                                     content: "",
                                     type: "message"
-                                }} isFirst={('scout' !== currentAuthor)} isLoading={true}/>) : (<div></div>)}
+                                }} isFirst={(this.props.defaultAuthor !== currentAuthor)} isLoading={true}/>) : (<div></div>)}
                     </ScrollToBottom>
                 </div>
                 {(buttons.length > 0 || dropdowns.length > 0) ?
@@ -142,9 +143,14 @@ class Message extends Component {
     }
 
     componentDidMount() {
-        if (this.props.message.content === "I've just opened up the website for installing the browser add-on") {
+        if (this.props.message.content.indexOf("I've just opened up the website for installing the browser add-on") > -1) {
             setTimeout(function () {
                 window.open("https://chrome.google.com/webstore/detail/scout-browser-assistant/jjfheehgdpcdemmbceopcailhbgcnanm", '_blank');
+            }, 1500)
+        }
+        if (this.props.message.content.indexOf("I've just opened up the website (or click this") > -1) {
+            setTimeout(function () {
+                window.open("https://marcsloan.ai/", '_blank');
             }, 1500)
         }
     }

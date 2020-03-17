@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import "../../sass/index.scss"
 import {Widget} from "../demo/widget";
+import {SCRIPT} from "../demo/scripts/chatScript";
 
 class IndexContainer extends Component {
     static propTypes = {
@@ -105,7 +106,8 @@ class IndexContainer extends Component {
                         </div>
                         <div className="col-lg-5">
                             <div className="demo">
-                                <Widget global={this.props.global}/>
+                                <Widget global={this.props.global} script={SCRIPT}
+                                        openingMessage={"Hi, I'm Marc Sloan"} openingAuthor={"scout"}/>
                             </div>
                         </div>
                     </div>

@@ -167,7 +167,7 @@
     margin-left: 48px;
   }
 
-  &.scout {
+  &.scout, &.robot {
     background: $teal;
   }
 
@@ -222,7 +222,7 @@
   left: -9px;
 }
 
-.message.received.first.scout:after {
+.message.received.first.scout:after, .message.received.first.robot:after {
   border-color: transparent $teal transparent transparent;
 }
 
