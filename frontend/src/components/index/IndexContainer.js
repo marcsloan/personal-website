@@ -46,6 +46,7 @@ class IndexContainer extends Component {
                                     Entrepreneur
                                     First. You should also <a href="http://andrewoharney.com/" target="_blank">check him
                                         out</a> too, he’s great. </p>
+                                <p>If you're interested in learning more about the virtual assistant and its design, you should read my latest blog post on the subject - <a href="https://blog.marcsloan.ai/what-if-your-web-browser-could-talk/" target="_blank">What if web browsers could talk?</a></p>
                                 <div className="small-medium-spacer"/>
                             </div>
                         </div>
