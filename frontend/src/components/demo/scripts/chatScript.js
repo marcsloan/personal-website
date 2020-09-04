@@ -45,27 +45,11 @@ export const SCRIPT = {
             },
             {
                 author: "scout",
-                content: "We called it [Scout](https://contextscout.com)",
+                content: "We called it Scout",
                 type: "message"
             },
         ],
-        buttons: ["Show me an example", "Give it a go"],
-        dropdowns: [],
-    },
-    "Give it a go": {
-        chatLog: [
-            {
-                author: "scout",
-                content: "I've just opened up the website for installing the browser add-on (or click this <a href='https://chrome.google.com/webstore/detail/scout-browser-assistant/jjfheehgdpcdemmbceopcailhbgcnanm' target='_blank'>link</a> if your browser blocks popups)",
-                type: "message"
-            },
-            {
-                author: "scout",
-                content: "![Enjoy](https://media.giphy.com/media/6oB3X3W6MYM3C/giphy.gif)",
-                type: "message"
-            },
-        ],
-        buttons: ["Show me an example", "Go back to start"],
+        buttons: ["Show me an example"],
         dropdowns: [],
     },
     "Show me an example": {
@@ -183,7 +167,7 @@ export const SCRIPT = {
                 type: "message"
             },
         ],
-        buttons: ["Give it a go", "Go back to start"],
+        buttons: ["Go back to start"],
         dropdowns: [],
     },
     "This sucks": {
@@ -209,7 +193,7 @@ export const SCRIPT = {
                 type: "message"
             },
         ],
-        buttons: ["Give it a go", "Go back to start"],
+        buttons: ["Go back to start"],
         dropdowns: [],
     },
     "Tell me more about you": {
@@ -362,11 +346,6 @@ export const SCRIPT = {
             {
                 author: "scout",
                 content: "You can see the codebase on my <a href='https://github.com/marcsloan/personal-website' target='_blank'>GitHub page</a>.",
-                type: "message"
-            },
-            {
-                author: "scout",
-                content: "If this is what you're interested in, you should go visit my co-founder Andy's <a href='http://andrewoharney.com/' target='_blank'>website</a> where he covers more of the technical side of things",
                 type: "message"
             },
         ],
