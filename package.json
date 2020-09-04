@@ -53,7 +53,7 @@
   "dependencies": {
     "emoji-js": "^3.5.0",
     "jquery": "^3.4.1",
-    "markdown-to-jsx": "^6.10.3",
+    "markdown-to-jsx": "^6.11.4",
     "node-sass": "^4.13.0",
     "ramda": "^0.26.1",
     "react-dropdown-select": "^3.9.0",
