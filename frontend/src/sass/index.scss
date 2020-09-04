@@ -40,7 +40,11 @@
         span {
           font-size: 58px;
           font-family: Avenir-Light, Avenir, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
-          display: flex;
+          //display: flex;
+        }
+
+        .marc-sloan{
+          font-weight: 600;
         }
       }
 
@@ -89,14 +93,18 @@
 }
 
 .blog-button {
+
   background-color: #007EDB;
-  height: 34px;
-  width: 200px;
-  color: #FDFDFD;
-  border-radius: 17px;
-  padding: 5px;
-  text-align: center;
-  margin: auto auto 1rem;
+    height: 60px;
+    width: 200px;
+    color: #FDFDFD;
+    border-radius: 2px;
+    padding: 5px;
+    text-align: center;
+    margin: auto auto 1rem;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
 }
 
 .blog-button:visited, .blog-button:hover, .blog-button:active {
@@ -115,7 +123,8 @@
   }
   .index-content {
     background: $teal;
-    background: linear-gradient(90deg, $teal 0%, $teal 75%, $gradient-blue 100%);
+    //background: linear-gradient(90deg, $teal 0%, $teal 75%, $gradient-blue 100%);
+    background: linear-gradient(90deg, rgba(58,184,195,1) 0%, rgba(58,184,195,0.896796218487395) 50%, rgba(210,223,75,0.6362920168067228) 100%);
   }
 }
 

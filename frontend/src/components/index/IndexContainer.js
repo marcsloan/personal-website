@@ -71,7 +71,7 @@ class IndexContainer extends Component {
                                 <div className="col-8">
                                     <div className="index-message-box justify-content-center">
                                         <div className="index-message">
-                                            <span>Hi, I'm Marc Sloan</span>
+                                            <span><span>Hi, I'm </span><span className="marc-sloan">Marc Sloan</span></span>
                                         </div>
                                     </div>
                                     <div className="small-medium-spacer"/>
