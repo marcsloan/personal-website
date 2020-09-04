@@ -59,6 +59,17 @@
         left: -9px;
         border-color: transparent $white transparent transparent;
       }
+
+      .award-carousel{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        img{
+          max-width: 150px;
+          margin: 10px;
+        }
+      }
     }
   }
 

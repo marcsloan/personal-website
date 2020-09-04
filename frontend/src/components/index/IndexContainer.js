@@ -25,14 +25,11 @@ class IndexContainer extends Component {
                 <div className="col-8">
                     <div className="container">
                         <div className="row justify-content-start">
-                            <div className="col-md-9 text-justified">
-                                <p>To build it I spent 4 years developing, <a
+                            {/*<div className="col-md-9 text-justified">*/}
+                            <div className="text-justified">
+                                <p>In that time, I graduated from Entrepreneur First, <a
                                     href="https://www.crunchbase.com/organization/context-scout"
-                                    target="_blank">fundraising</a>,
-                                    hiring, firing, testing and designing. I’ve written extensively about what went
-                                    right and what
-                                    went wrong, and what I learned from it. Have a read, I hope you can learn something
-                                    too.</p>
+                                    target="_blank">raised almost £2m in venture capital and R&D grants</a> and managed a team of 10. Unfortunately, the company did not survive the COVID-19 pandemic and we closed it in 2020. You can read more about our efforts on my blog.</p>
                                 <div className="small-medium-spacer"/>
                                 <a href="http://blog.marcsloan.ai/" target="_blank" className="blog-button-link">
                                     <div className="blog-button">
@@ -40,13 +37,24 @@ class IndexContainer extends Component {
                                     </div>
                                 </a>
                                 <div className="small-medium-spacer"/>
-                                <p>The concept sprung from my 5 years of research into dynamic information retrieval at
-                                    UCL and
-                                    Microsoft Research, and I started working on it with Andrew O’Harney who I met on
-                                    Entrepreneur
-                                    First. You should also <a href="http://andrewoharney.com/" target="_blank">check him
-                                        out</a> too, he’s great. </p>
-                                <p>If you're interested in learning more about the virtual assistant and its design, you should read my latest blog post on the subject - <a href="https://blog.marcsloan.ai/what-if-your-web-browser-could-talk/" target="_blank">What if web browsers could talk?</a></p>
+                                <p>In response to the COVID-19 pandemic, I founded a non-profit called <a href="https://covidtechsupport.com/"
+                                                                             target="_blank">Covid Tech Support</a> which finds tech talent to support charities struggling due to COVID-19. To help run it, I recruited and manage a team of 15-20 volunteers who so far have helped over 200 projects by matching them to our community of 1500 digital experts.</p>
+                                <p>For this I've been awarded a Points of Light award by the Prime Minister and have been nominated by Tech4Good for their Digital Volunteer Award 2020.</p>
+                                <div className="small-medium-spacer"/>
+                                <div className="award-carousel">
+                                    <a href="https://www.tech4goodawards.com/finalist/marc-sloan/" target="_blank"><img src={this.props.global.STATIC_URL + "img/index/Tech4Good.png"}/></a>
+                                    <a href="https://www.pointsoflight.gov.uk/covid-tech-support/" target="_blank"><img src={this.props.global.STATIC_URL + "img/index/PointsofLight.png"}/></a>
+                                </div>
+                                <div className="small-medium-spacer"/>
+                                <p>Before all of this, I was an <a
+                                                    href="https://scholar.google.com/citations?user=17C0-A0AAAAJ&hl=en"
+                                                    target="_blank">academic</a>. I completed my PhD thesis at UCL on the topic Dynamic Information Retrieval Modeling (a probabilistic model that combines reinforcement learning with web search), on which I also
+                                    <a href="https://www.amazon.co.uk/Information-Retrieval-Modeling-Synthesis-Lectures/dp/1627055258/ref=sr_1_1?dchild=1&keywords=dynamic+information+retrieval+modeling&qid=1599210532&sr=8-1"
+                                                                             target="_blank"> published a book</a>. I also applied my research to the Bing search engine while at Microsoft Research in Redmond.</p>
+                                <p>And before that I was a <a href="https://github.com/marcsloan"
+                                                                                     target="_blank">software developer</a> who worked on particle accelerators in Switzerland and in a spy agency beginning with G and ending in Q. </p>
+                                <hr/>
+                                <p>It's because of all of these experiences that I'm passionate about product leadership in deep tech. If you'd like to talk about deep tech products, please feel free to <a target="_blank" href="mailto:hi@marcsloan.com">contact me</a>, follow me on <a target="_blank" href="https://twitter.com/MarcCSloan">Twitter</a> or connect on <a target="_blank" href="https://www.linkedin.com/in/marcsloan/">LinkedIn</a>.</p>
                                 <div className="small-medium-spacer"/>
                             </div>
                         </div>
@@ -77,21 +85,13 @@ class IndexContainer extends Component {
                                     <div className="small-medium-spacer"/>
                                     <div className="container">
                                         <div className="row justify-content-start">
-                                            <div className="col-md-9 text-justified">
-                                                <p>I’m a product manager, <a href="https://angel.co/marc-sloan"
-                                                                             target="_blank">entrepreneur</a>, <a
-                                                    href="https://scholar.google.com/citations?user=17C0-A0AAAAJ&hl=en"
-                                                    target="_blank">academic</a>, <a href="https://github.com/marcsloan"
-                                                                                     target="_blank">developer</a> and <a
-                                                    href="https://dribbble.com/marcsloan" target="_blank">designer</a>,
-                                                    ruminating on AI and the future of the internet. I created a
-                                                    technology
-                                                    called <a href="https://www.contextscout.com/"
-                                                              target="_blank">Scout</a> that offers real-time virtual
-                                                    assistance
-                                                    while browsing online. It’s over there, go ahead, you can play
-                                                    around with
-                                                    it. </p>
+                                            {/*<div className="col-md-9 text-justified">*/}
+                                            <div className="text-justified">
+                                                <p>I'm a product manager with experience in business, deep tech and analytics-driven product leadership.</p>
+                                                <p>With this combination of skills I help AI startups reach product market fit. Right now I'm working on bringing <a href="https://plural.ai/"
+                                                                             target="_blank">Plural AI's</a> financial knowledge graph platform to the market.</p>
+                                                <p>But before that I spent 5 years as an <a href="https://angel.co/marc-sloan"
+                                                                             target="_blank">entrepreneur</a> building a next generation web search technology: a real-time virtual assistant that helps you while you browse online. You can check it out over there, go ahead, you can play around with it.</p>
                                             </div>
                                         </div>
                                     </div>
