@@ -54,7 +54,7 @@ class IndexContainer extends Component {
                                 <p>And before that I was a <a href="https://github.com/marcsloan"
                                                                                      target="_blank">software developer</a> who worked on particle accelerators in Switzerland and in a spy agency beginning with G and ending in Q. </p>
                                 <hr/>
-                                <p>It's because of all of these experiences that I'm passionate about product leadership in deep tech. If you'd like to talk about deep tech products, please feel free to <a target="_blank" href="mailto:hi@marcsloan.com">contact me</a>, follow me on <a target="_blank" href="https://twitter.com/MarcCSloan">Twitter</a> or connect on <a target="_blank" href="https://www.linkedin.com/in/marcsloan/">LinkedIn</a>.</p>
+                                <p>Because of all of these experiences I'm passionate about product leadership in deep tech. If you'd like to talk about deep tech products, please feel free to <a target="_blank" href="mailto:hi@marcsloan.com">contact me</a>, follow me on <a target="_blank" href="https://twitter.com/MarcCSloan">Twitter</a> or connect on <a target="_blank" href="https://www.linkedin.com/in/marcsloan/">LinkedIn</a>.</p>
                                 <div className="small-medium-spacer"/>
                             </div>
                         </div>
