@@ -39,7 +39,7 @@ class IndexContainer extends Component {
                                 <div className="small-medium-spacer"/>
                                 <p>In response to the COVID-19 pandemic, I founded a non-profit called <a href="https://covidtechsupport.com/"
                                                                              target="_blank">Covid Tech Support</a> which finds tech talent to support charities struggling due to COVID-19. To help run it, I recruited and manage a team of 15-20 volunteers who so far have helped over 200 projects by matching them to our community of 1500 digital experts.</p>
-                                <p>For this I've been awarded a Points of Light award by the Prime Minister and have been nominated by Tech4Good for their Digital Volunteer Award 2020.</p>
+                                <p>For this I've been awarded a Points of Light award by the Prime Minister and the 2020 Digital Volunteer Tech4Good Award.</p>
                                 <div className="small-medium-spacer"/>
                                 <div className="award-carousel">
                                     <a href="https://www.tech4goodawards.com/finalist/marc-sloan/" target="_blank"><img src={this.props.global.STATIC_URL + "img/index/Tech4Good.png"}/></a>
