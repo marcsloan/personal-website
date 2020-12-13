@@ -3,6 +3,8 @@ import os
 import django_heroku
 import dj_database_url
 import dotenv
+import json
+from oauth2client.service_account import ServiceAccountCredentials
 
 
 def _load_default(var, local_default, deploy_default, _type=None):
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'frontend',
     'rest_framework',
+    'scheduler',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +144,12 @@ if SECURE_SSL_REDIRECT:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 X_FRAME_OPTIONS = 'ALLOW-FROM https://blog.marcsloan.ai/'
+
+ANALYTICS_CREDENTIALS = None
+_ANALYTICS_SCOPES = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+_ANALYTICS_CREDENTIAL_FILE = dotenv.dotenv_values()['ANALYTICS_CREDENTIALS']
+
+try:
+    ANALYTICS_CREDENTIALS = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(_ANALYTICS_CREDENTIAL_FILE), scopes=_ANALYTICS_SCOPES)
+except Exception:
+    pass

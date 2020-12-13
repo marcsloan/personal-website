@@ -18,3 +18,4 @@ staticfiles/
 .python-version
 .venv
 .env
+ghostdriver.log
