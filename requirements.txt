@@ -95,3 +95,6 @@ vine==1.2.0
 wcwidth==0.1.7
 whitenoise==3.3.1
 zope.interface==4.6.0
+pyquery==1.4.3
+gspread==3.6.0
+oauth2client==4.1.3
