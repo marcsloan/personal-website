@@ -3,16 +3,16 @@ import time
 from scheduler.spreadsheet import Spreadsheet
 from pyquery import PyQuery
 from datetime import date
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
 
 LEGO_IDEAS_URL = "https://ideas.lego.com/search/global_search/ideas?idea_phase=idea_gathering_support&query=&sort=top"
 
 
 def run_lego_metrics():
-    from selenium import webdriver
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.support import expected_conditions as EC
-    from selenium.webdriver.common.by import By
-    from selenium.common.exceptions import TimeoutException
 
     browser = webdriver.PhantomJS()
     browser.get(LEGO_IDEAS_URL)
