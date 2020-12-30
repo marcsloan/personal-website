@@ -86,7 +86,7 @@ stevedore==1.30.0
 tornado==5.1.1
 tqdm==4.25.0
 traitlets==4.3.2
-twisted>=20.30.0
+twisted>=20.3.0
 txaio==18.8.1
 urllib3>=1.24.2
 user-agent==0.1.5
