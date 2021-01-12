@@ -55,7 +55,15 @@ def run_lego_metrics():
 
     titles = [i.text for i in pq('h3.card-title>a')]
     supporters = [i.text.strip() for i in pq('a.project-support-value')]
+
+    try:
+        listing_index = titles.index("Vintage Lego Topographical Map")
+    except ValueError:
+        listing_index = ""
+
     new_data = dict(zip(titles, supporters))
+    new_data["Vintage Lego Topographical Map Position"] = listing_index
+
     new_data.update(profiles)
 
     spreadsheet = Spreadsheet(LEGO_SPREADSHEET_NAME)
