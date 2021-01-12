@@ -57,7 +57,7 @@ def run_lego_metrics():
     supporters = [i.text.strip() for i in pq('a.project-support-value')]
 
     try:
-        listing_index = titles.index("Vintage Lego Topographical Map")
+        listing_index = titles.index("Vintage Lego Topographical Map")+1
     except ValueError:
         listing_index = ""
 
