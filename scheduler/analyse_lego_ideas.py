@@ -1,10 +1,15 @@
 import os
 import time
 
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.wait import WebDriverWait
+
 from scheduler.spreadsheet import Spreadsheet
 from pyquery import PyQuery
 from datetime import date
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 LEGO_IDEAS_URL = "https://ideas.lego.com/search/global_search/ideas?idea_phase=idea_gathering_support&query=&sort=top"
 
@@ -32,7 +37,7 @@ def run_lego_metrics():
     # browser = webdriver.Chrome()
 
     delay = 3  # seconds
-    timeout = 10
+    timeout = 5
 
     profiles = {}
 
@@ -45,27 +50,36 @@ def run_lego_metrics():
         profiles[title] = supporters
 
 
-    # browser.get(LEGO_IDEAS_URL)
-    #
-    #
-    # try:
-    #     WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.TAG_NAME, 'h3')))
-    #     browser.find_element_by_xpath('//a[@class="btn btn-primary btn-alternate search-more"]').click()
-    #     WebDriverWait(browser, timeout=timeout)
-    # except TimeoutException:
-    #     print("Loading took too much time!")
-    #
-    # time.sleep(timeout)
-    # pq = PyQuery(browser.page_source)
-    #
-    # titles = [i.text for i in pq('h3.card-title>a')]
-    # supporters = [i.text.strip() for i in pq('a.project-support-value')]
+    browser.get(LEGO_IDEAS_URL)
+
+
+    try:
+        WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.TAG_NAME, 'h3')))
+        time.sleep(delay)
+        browser.find_element_by_xpath('//button[@class="close"]').click()
+        browser.find_element_by_xpath('//a[@class="btn btn-primary btn-alternate search-more"]').click()
+        # WebDriverWait(browser, timeout=timeout)
+    except TimeoutException:
+        print("Loading took too much time!")
+
+    time.sleep(timeout)
+    n = 0
+    while "Vintage Lego Topographical Map" not in browser.page_source:
+        browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(timeout)
+        n +=1
+        print(n)
+
+    pq = PyQuery(browser.page_source)
+
+    titles = [i.text for i in pq('h3.card-title>a')]
+    supporters = [i.text.strip() for i in pq('a.project-support-value')]
 
     listing_index = ""
-    # try:
-    #     listing_index = titles.index("Vintage Lego Topographical Map")+1
-    # except ValueError:
-    #     listing_index = ""
+    try:
+        listing_index = titles.index("Vintage Lego Topographical Map")+1
+    except ValueError:
+        listing_index = ""
 
     new_data = {}
     # new_data = dict(zip(titles, supporters))
