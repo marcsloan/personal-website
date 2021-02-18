@@ -5,11 +5,6 @@ from scheduler.spreadsheet import Spreadsheet
 from pyquery import PyQuery
 from datetime import date
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
 
 LEGO_IDEAS_URL = "https://ideas.lego.com/search/global_search/ideas?idea_phase=idea_gathering_support&query=&sort=top"
 
@@ -27,31 +22,15 @@ LEGO_SPREADSHEET_NAME = "Lego Ideas"
 
 def run_lego_metrics():
 
-    # browser = webdriver.PhantomJS()
-    path = os.path.realpath(__file__)
-    # path = path.replace('analyse_lego_ideas.py', 'geckodriver')
-    path = path.replace('analyse_lego_ideas.py', 'geckodriverUnix')
-
-    # browser = webdriver.Firefox(executable_path=path)
-
-    # GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
     GOOGLE_CHROME_PATH = os.environ.get('GOOGLE_CHROME_SHIM', None)
-    # GOOGLE_CHROME_PATH = os.environ.get("GOOGLE_CHROME_BIN", "chromedriver")
-    print(GOOGLE_CHROME_PATH)
-    # CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = GOOGLE_CHROME_PATH
-    # chrome_options.add_argument('--disable-gpu')
-    # chrome_options.add_argument('--no-sandbox')
-    # chrome_options.add_argument('--headless')
-    # chrome_options.binary_location = GOOGLE_CHROME_PATH
-    browser = webdriver.Chrome(chrome_options=chrome_options)
-    print("it worked!")
 
-    # options = Options()
-    # options.headless = True
-    # browser = webdriver.Firefox(options=options, executable_path=path)
+    # comment out this when running locally
+    browser = webdriver.Chrome(chrome_options=chrome_options)
+    # browser = webdriver.Chrome()
+
     delay = 3  # seconds
     timeout = 10
 
