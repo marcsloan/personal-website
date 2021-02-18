@@ -5,6 +5,7 @@ from scheduler.spreadsheet import Spreadsheet
 from pyquery import PyQuery
 from datetime import date
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -32,7 +33,10 @@ def run_lego_metrics():
     # path = path.replace('analyse_lego_ideas.py', 'geckodriverUnix')
 
     # browser = webdriver.Firefox(executable_path=path)
-    browser = webdriver.Firefox()
+
+    options = Options()
+    options.headless = True
+    browser = webdriver.Firefox(options=options)
     delay = 3  # seconds
     timeout = 10
 
