@@ -34,9 +34,19 @@ def run_lego_metrics():
 
     # browser = webdriver.Firefox(executable_path=path)
 
-    options = Options()
-    options.headless = True
-    browser = webdriver.Firefox(options=options, executable_path=path)
+    GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+    CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.binary_location = GOOGLE_CHROME_PATH
+    browser = webdriver.Chrome(execution_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+    print("it worked!")
+
+    # options = Options()
+    # options.headless = True
+    # browser = webdriver.Firefox(options=options, executable_path=path)
     delay = 3  # seconds
     timeout = 10
 
