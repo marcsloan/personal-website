@@ -28,7 +28,8 @@ def run_lego_metrics():
 
     # browser = webdriver.PhantomJS()
     path = os.path.realpath(__file__)
-    path = path.replace('analyse_lego_ideas.py', 'geckodriver')
+    # path = path.replace('analyse_lego_ideas.py', 'geckodriver')
+    path = path.replace('analyse_lego_ideas.py', 'geckodriverUnix')
     browser = webdriver.Firefox(executable_path=path)
     delay = 3  # seconds
     timeout = 10
