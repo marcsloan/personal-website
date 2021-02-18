@@ -1,3 +1,4 @@
+import os
 import time
 
 from scheduler.spreadsheet import Spreadsheet
@@ -25,7 +26,10 @@ LEGO_SPREADSHEET_NAME = "Lego Ideas"
 
 def run_lego_metrics():
 
-    browser = webdriver.PhantomJS()
+    # browser = webdriver.PhantomJS()
+    path = os.path.realpath(__file__)
+    path = path.replace('analyse_lego_ideas.py', 'geckodriver')
+    browser = webdriver.Firefox(executable_path=path)
     delay = 3  # seconds
     timeout = 10
 
@@ -36,32 +40,34 @@ def run_lego_metrics():
         time.sleep(delay)
         pq = PyQuery(browser.page_source)
         title = pq('.content-title>h1')[0].text.strip()
-        supporters = pq('.support-count')[0].text.strip()
+        supporters = pq('.count:first')[0].text.strip()
         profiles[title] = supporters
 
 
-    browser.get(LEGO_IDEAS_URL)
+    # browser.get(LEGO_IDEAS_URL)
+    #
+    #
+    # try:
+    #     WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.TAG_NAME, 'h3')))
+    #     browser.find_element_by_xpath('//a[@class="btn btn-primary btn-alternate search-more"]').click()
+    #     WebDriverWait(browser, timeout=timeout)
+    # except TimeoutException:
+    #     print("Loading took too much time!")
+    #
+    # time.sleep(timeout)
+    # pq = PyQuery(browser.page_source)
+    #
+    # titles = [i.text for i in pq('h3.card-title>a')]
+    # supporters = [i.text.strip() for i in pq('a.project-support-value')]
 
+    listing_index = ""
+    # try:
+    #     listing_index = titles.index("Vintage Lego Topographical Map")+1
+    # except ValueError:
+    #     listing_index = ""
 
-    try:
-        WebDriverWait(browser, delay).until(EC.presence_of_element_located((By.TAG_NAME, 'h3')))
-        browser.find_element_by_xpath('//a[@class="btn btn-primary btn-alternate search-more"]').click()
-        WebDriverWait(browser, timeout=timeout)
-    except TimeoutException:
-        print("Loading took too much time!")
-
-    time.sleep(timeout)
-    pq = PyQuery(browser.page_source)
-
-    titles = [i.text for i in pq('h3.card-title>a')]
-    supporters = [i.text.strip() for i in pq('a.project-support-value')]
-
-    try:
-        listing_index = titles.index("Vintage Lego Topographical Map")+1
-    except ValueError:
-        listing_index = ""
-
-    new_data = dict(zip(titles, supporters))
+    new_data = {}
+    # new_data = dict(zip(titles, supporters))
     new_data["Vintage Lego Topographical Map Position"] = listing_index
 
     new_data.update(profiles)
