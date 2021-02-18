@@ -36,7 +36,7 @@ def run_lego_metrics():
 
     options = Options()
     options.headless = True
-    browser = webdriver.Firefox(options=options, executable_path='/usr/local/bin/geckodriver')
+    browser = webdriver.Firefox(options=options, executable_path=path)
     delay = 3  # seconds
     timeout = 10
 
