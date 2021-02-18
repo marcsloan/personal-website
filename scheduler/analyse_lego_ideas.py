@@ -47,7 +47,7 @@ def run_lego_metrics():
     # browser = webdriver.Chrome()
 
     delay = 3  # seconds
-    timeout = 5
+    timeout = 10
 
     profiles = {}
 
