@@ -24,6 +24,16 @@ LEGO_PROFILES = ["https://ideas.lego.com/projects/35d99952-2aec-4351-9682-fc7fbb
 LEGO_SPREADSHEET_NAME = "Lego Ideas"
 # LEGO_SPREADSHEET_NAME = "Copy of Lego Ideas"
 
+def add_data_to_spreadsheet(spreadsheet, name, new_data):
+    data = spreadsheet.read_table(name)
+
+    today = date.today()
+    new_row = [today.strftime("%d/%m/%y")]
+    for new_datum in new_data:
+        new_row.append(new_datum)
+    data.append(new_row)
+    spreadsheet.save_to_worksheet(data, name)
+
 
 def run_lego_metrics():
 
@@ -62,13 +72,34 @@ def run_lego_metrics():
     except TimeoutException:
         print("Loading took too much time!")
 
-    time.sleep(timeout)
-    n = 0
+    for i in range(0, 4):
+        time.sleep(timeout)
+        browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    pq = PyQuery(browser.page_source)
+    supporters = [int(i.text.strip()) for i in pq('a.project-support-value')]
+    comments = [int(i.text.strip()) for i in pq('.card-stats span.stat-amount')]
+    daysLeft = [int(i.text.strip()) for i in pq('.days-left-value')]
+    daysGone = []
+    for i in range(0, len(supporters)):
+        if supporters[i] < 60:
+            daysGone.append(60-daysLeft[i])
+        elif supporters[i]  < 1000:
+            daysGone.append(60+365-daysLeft[i])
+        elif supporters[i] < 5000:
+            daysGone.append(60+365+182-daysLeft[i])
+        else:
+            daysGone.append(60+365+182+182-daysLeft[i])
+
+    spreadsheet = Spreadsheet(LEGO_SPREADSHEET_NAME)
+    add_data_to_spreadsheet(spreadsheet, 'Supporters', supporters)
+    add_data_to_spreadsheet(spreadsheet, 'Comments', comments)
+    add_data_to_spreadsheet(spreadsheet, 'Days', daysGone)
+
+
     while "Vintage Lego Topographical Map" not in browser.page_source:
         browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(timeout)
-        n +=1
-        print(n)
 
     pq = PyQuery(browser.page_source)
 
@@ -87,7 +118,6 @@ def run_lego_metrics():
 
     new_data.update(profiles)
 
-    spreadsheet = Spreadsheet(LEGO_SPREADSHEET_NAME)
     data = spreadsheet.read_table('Popular')
 
     today = date.today()
