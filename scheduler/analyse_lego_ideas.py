@@ -98,9 +98,9 @@ def run_lego_metrics():
     add_data_to_spreadsheet(spreadsheet, 'Days', daysGone)
 
 
-    while "Vintage Lego Topographical Map" not in browser.page_source:
-        browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(timeout)
+    # while "Vintage Lego Topographical Map" not in browser.page_source:
+    #     browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    #     time.sleep(timeout)
 
     pq = PyQuery(browser.page_source)
 
