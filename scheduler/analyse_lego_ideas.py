@@ -41,7 +41,10 @@ def run_lego_metrics():
 
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = GOOGLE_CHROME_PATH
-    chrome_options.add_argument("--window-size=1440,900", "--no-sandbox", "--headless", "--single-process")
+    chrome_options.add_argument("--window-size=1440,900")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--single-process")
 
     # comment out this when running locally
     browser = webdriver.Chrome(chrome_options=chrome_options)
