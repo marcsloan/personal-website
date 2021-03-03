@@ -38,12 +38,11 @@ def add_data_to_spreadsheet(spreadsheet, name, new_data):
 def run_lego_metrics():
 
     GOOGLE_CHROME_PATH = os.environ.get('GOOGLE_CHROME_SHIM', None)
-    print(GOOGLE_CHROME_PATH)
 
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = GOOGLE_CHROME_PATH
     chrome_options.add_argument("--no-sandbox")
-    # chrome_options.add_argument("--remote-debugging-port=9222")
+    chrome_options.add_argument("--remote-debugging-port=9222")
     chrome_options.add_argument("--window-size=1440,900")
     # chrome_options.add_argument("--headless")
     # chrome_options.add_argument("--single-process")
