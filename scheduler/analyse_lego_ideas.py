@@ -40,8 +40,8 @@ def run_lego_metrics():
     GOOGLE_CHROME_PATH = os.environ.get('GOOGLE_CHROME_SHIM', None)
 
     chrome_options = webdriver.ChromeOptions()
-    # chrome_options.binary_location = GOOGLE_CHROME_PATH
-    chrome_options.binary_location = "/app/.apt/usr/bin/google-chrome"
+    chrome_options.binary_location = GOOGLE_CHROME_PATH
+    # chrome_options.binary_location = "/app/.apt/usr/bin/google-chrome"
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--remote-debugging-port=9222")
     chrome_options.add_argument("--window-size=1440,900")
@@ -50,9 +50,9 @@ def run_lego_metrics():
     chrome_options.add_argument("--disable-dev-shm-usage")
 
     # comment out this when running locally
-    chrome_driver_path = "/app/.chromedriver/bin/chromedriver"
+    # chrome_driver_path = "/app/.chromedriver/bin/chromedriver"
 
-    browser = webdriver.Chrome(chrome_driver_path, chrome_options=chrome_options)
+    browser = webdriver.Chrome(chrome_options=chrome_options)
     # browser = webdriver.Chrome()
 
     delay = 3  # seconds
