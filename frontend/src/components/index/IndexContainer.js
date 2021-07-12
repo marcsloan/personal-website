@@ -37,8 +37,7 @@ class IndexContainer extends Component {
                                     </div>
                                 </a>
                                 <div className="small-medium-spacer"/>
-                                <p>In response to the COVID-19 pandemic, I founded a non-profit called <a href="https://covidtechsupport.com/"
-                                                                             target="_blank">Covid Tech Support</a> which finds tech talent to support charities struggling due to COVID-19. To help run it, I recruited and manage a team of 15-20 volunteers who so far have helped over 200 projects by matching them to our community of 1500 digital experts.</p>
+                                <p>In response to the COVID-19 pandemic, I founded a non-profit called Covid Tech Support (now rebranded as <a target="_blank" href={"https://www.getdigitallies.org/"}>digitAllies</a>) which finds tech talent to support charities struggling due to COVID-19. To help run it, I recruited and manage a team of 15-20 volunteers who so far have helped over 200 projects by matching them to our community of 1500 digital experts.</p>
                                 <p>For this I've been awarded a British Empire Medal in the 2021 New Years Honours List, a Points of Light award by the Prime Minister and the 2020 Digital Volunteer Tech4Good Award.</p>
                                 <div className="small-medium-spacer"/>
                                 <div className="award-carousel">
@@ -88,8 +87,8 @@ class IndexContainer extends Component {
                                             {/*<div className="col-md-9 text-justified">*/}
                                             <div className="text-justified">
                                                 <p>I'm a product manager with experience in business, deep tech and analytics-driven product leadership.</p>
-                                                <p>With this combination of skills I help AI startups reach product market fit. Right now I'm working on bringing <a href="https://plural.ai/"
-                                                                             target="_blank">Plural AI's</a> financial knowledge graph platform to the market.</p>
+                                                <p>With this combination of skills I'm currently leading <a href="https://www.weareuncapped.com/"
+                                                                                                            target="_blank">Uncapped's</a> Financing team in automating and scaling their core revenue-based loan product. </p>
                                                 <p>But before that I spent 5 years as an <a href="https://angel.co/marc-sloan"
                                                                              target="_blank">entrepreneur</a> building a next generation web search technology: a real-time virtual assistant that helps you while you browse online. You can check it out over there, go ahead, you can play around with it.</p>
                                             </div>
