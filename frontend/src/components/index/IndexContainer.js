@@ -31,7 +31,7 @@ class IndexContainer extends Component {
                                     href="https://www.crunchbase.com/organization/context-scout"
                                     target="_blank">raised almost £2m in venture capital and R&D grants</a> and managed a team of 10. Unfortunately, the company did not survive the COVID-19 pandemic and we closed it in 2020. You can read more about our efforts on my blog.</p>
                                 <div className="small-medium-spacer"/>
-                                <a href="http://blog.marcsloan.ai/" target="_blank" className="blog-button-link">
+                                <a href="http://blog.marcsloan.com/" target="_blank" className="blog-button-link">
                                     <div className="blog-button">
                                         Go to Blog
                                     </div>
