@@ -28,7 +28,7 @@ export default class NavContainer extends Component {
         return (
             <nav
                 className={`navbar navbar-index sticky-top nav-hidden ${show ? 'nav-show-on-scroll' : 'nav-put-away'}`}>
-                <a className="nav-link" target="_blank" href="https://blog.marcsloan.ai/">Blog</a>
+                <a className="nav-link" target="_blank" href="https://blog.marcsloan.com/">Blog</a>
                 <a className="nav-link" target="_blank" href="mailto:hi@marcsloan.com">Contact</a>
             </nav>
         )
