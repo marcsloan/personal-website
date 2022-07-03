@@ -7,6 +7,7 @@ import "../../sass/index.scss"
 import {Widget} from "../demo/widget";
 import {SCRIPT} from "../demo/scripts/chatScript";
 
+
 class IndexContainer extends Component {
     static propTypes = {
         global: PropTypes.object.isRequired,
