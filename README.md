@@ -35,7 +35,7 @@
 1. `git add` Add changes and `git push` to master
 2. Check the deploy status `https://dashboard.heroku.com/apps/marcsloan`
 
-#Set up and deploy (2022)
+# Set up and deploy (2022)
 ## Set Up
 1. Download sourcetree to get Git setup easily, connect to my Github account and download the source code
 2. Download Git Credential Manager https://github.com/GitCredentialManager/git-credential-manager/blob/main/README.md so I can easily log into Github locally
@@ -45,6 +45,7 @@
 ## Deploy
 1. Go to the local git repository, use CLI to git add, commit and push
 2. Do the `heroku login`
-3. `git push heroku`
+3. `git push` to push to github
+3. `git push heroku` to push to heroku and re-deploy
 
  
