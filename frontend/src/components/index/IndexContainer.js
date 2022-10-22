@@ -88,7 +88,10 @@ class IndexContainer extends Component {
                                             {/*<div className="col-md-9 text-justified">*/}
                                             <div className="text-justified">
                                                 <p>I am a data-driven senior product leader with 7+ years of experience hiring and managing agile, cross-functional product teams that build complex technical and financial projects, while juggling multiple stakeholders, that deliver impact.</p>
-                                                <p>With this combination of skills I'm currently leading <a href="https://www.weareuncapped.com/"
+                                                <p>With this combination of skills I'm leading <a href="https://www.causaly.com/"
+                                                                                                            target="_blank">Causaly's</a> efforts to help biomedical researchers and decision-makers discover evidence from millions of academic publications, clinical trials, regulatory documents, patents and other data sources, in minutes, by managing and scaling their Intelligent Search product.
+
+                                                With this combination of skills I'm currently leading <a href="https://www.weareuncapped.com/"
                                                                                                             target="_blank">Uncapped's</a> Financing team in automating and scaling their core revenue-based loan product. </p>
                                                 <p>But before that I spent 5 years as an <a href="https://angel.co/marc-sloan"
                                                                              target="_blank">entrepreneur</a> building a next generation web search technology: a real-time virtual assistant that helps you while you browse online. You can check it out over there, go ahead, you can play around with it.</p>
