@@ -87,7 +87,7 @@ class IndexContainer extends Component {
                                         <div className="row justify-content-start">
                                             {/*<div className="col-md-9 text-justified">*/}
                                             <div className="text-justified">
-                                                <p>I am a data-driven senir product leader with 7+ years of experience hiring and managing agile, cross-functional product teams that build complex technical and financial projects, while juggling multiple stakeholders, that deliver impact.</p>
+                                                <p>I am a data-driven senior product leader with 7+ years of experience hiring and managing agile, cross-functional product teams that build complex technical and financial projects, while juggling multiple stakeholders, that deliver impact.</p>
                                                 <p>With this combination of skills I'm currently leading <a href="https://www.weareuncapped.com/"
                                                                                                             target="_blank">Uncapped's</a> Financing team in automating and scaling their core revenue-based loan product. </p>
                                                 <p>But before that I spent 5 years as an <a href="https://angel.co/marc-sloan"
