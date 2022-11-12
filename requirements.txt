@@ -8,3 +8,4 @@ django-su==0.8.0
 djangorestframework>=3.9.1
 python-dotenv==0.10.3
 oauth2client==4.1.3
+daphne==2.2.3
