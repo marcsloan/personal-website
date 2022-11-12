@@ -47,5 +47,3 @@
 2. Do the `heroku login`
 3. `git push` to push to github
 3. `git push heroku` to push to heroku and re-deploy
-
- 
