@@ -91,7 +91,7 @@ class IndexContainer extends Component {
                                                 <p>With this combination of skills I'm leading <a href="https://www.causaly.com/"
                                                                                                             target="_blank">Causaly's</a> efforts to help biomedical researchers and decision-makers discover evidence from millions of academic publications, clinical trials, regulatory documents, patents and other data sources, in minutes, by managing and scaling their Intelligent Search product.</p>
 
-                                                <p>But before that I spent 5 years as an <a href="https://angel.co/marc-sloan"
+                                                <p>But before that I spent 2 years building data-driven financial products and 5 years as an <a href="https://angel.co/marc-sloan"
                                                                              target="_blank">entrepreneur</a> building a next generation web search technology: a real-time virtual assistant that helps you while you browse online. You can check it out over there, go ahead, you can play around with it.</p>
                                             </div>
                                         </div>
