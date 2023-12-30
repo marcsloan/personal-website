@@ -86,6 +86,7 @@ class IndexContainer extends Component {
                                         <div className="row justify-content-start">
                                             {/*<div className="col-md-9 text-justified">*/}
                                             <div className="text-justified">
+                                            
                                             <p>I am a data-driven senior product manager with 8+ years of experience hiring and managing agile, cross-functional product teams that deliver complex technical and financial projects. In my work, I've become adept at juggling multiple stakeholders and ensuring that we always deliver significant impact.</p>
 
                                             <p>Currently, I manage a team of developers, designers, data scientists, and biomedical experts, jointly pushing the boundaries in <a href="https://www.causaly.com/"
