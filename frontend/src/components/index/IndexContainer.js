@@ -28,8 +28,8 @@ class IndexContainer extends Component {
                         <div className="row justify-content-start">
                             {/*<div className="col-md-9 text-justified">*/}
                             <div className="text-justified">
-                                <p>Within this time, I graduated from Entrepreneur First, <a
-                                    href="https://www.crunchbase.com/organization/context-scout" target="_blank">raised nearly £2m in venture capital and R&D grants</a>, and managed a team of 10. Unfortunately, the company did not weather the COVID-19 pandemic, and we closed it in 2020. You can read more about our efforts on my blog.</p>
+                                    <p>Within this time, I graduated from Entrepreneur First, <a
+                                    href="https://www.crunchbase.com/organization/context-scout" target="_blank">raised £2m in venture capital and R&D grants</a>, and managed a team of 10. Unfortunately, the company did not weather the COVID-19 pandemic, and we closed it in 2020. You can read more about our efforts on my blog.</p>
                                 <div className="small-medium-spacer"/>
                                 <a href="http://blog.marcsloan.com/" target="_blank" className="blog-button-link">
                                     <div className="blog-button">
@@ -53,7 +53,7 @@ class IndexContainer extends Component {
                                 <p>Earlier still, I started my career as a <a href="https://github.com/marcsloan"
                                                                                      target="_blank">software developer</a>, working on particle accelerators in Switzerland and a spy agency beginning with G and ending in Q.</p>
                                 <hr/>
-                                <p>Because of all of these experiences I'm passionate about product leadership, deep tech, search and finance. If you'd like to get in touch, please feel free to <a target="_blank" href="mailto:hi@marcsloan.com">contact me</a>, follow me on <a target="_blank" href="https://twitter.com/MarcCSloan">Twitter</a> or connect on <a target="_blank" href="https://www.linkedin.com/in/marcsloan/">LinkedIn</a>.</p>
+                                <p>These experiences have fueled my passion for leading the impactful application of AI in world-class products. If you'd like to get in touch, please feel free to <a target="_blank" href="mailto:hi@marcsloan.com">contact me</a>, follow me on <a target="_blank" href="https://twitter.com/MarcCSloan">Twitter</a> or connect on <a target="_blank" href="https://www.linkedin.com/in/marcsloan/">LinkedIn</a>.</p>
                                 <div className="small-medium-spacer"/>
                             </div>
                         </div>
@@ -87,13 +87,11 @@ class IndexContainer extends Component {
                                             {/*<div className="col-md-9 text-justified">*/}
                                             <div className="text-justified">
                                             
-                                            <p>I am a data-driven senior product manager with 8+ years of experience hiring and managing agile, cross-functional product teams that deliver complex technical and financial projects. In my work, I've become adept at juggling multiple stakeholders and ensuring that we always deliver significant impact.</p>
+                                            <p>I am a data-driven senior product leader and British Empire Medal recipient with over 10 years of experience in building and managing agile, cross-functional teams. My focus is on delivering revenue-generating, design-led, AI-empowered projects, taking them from inception to scale and beyond.</p>
 
-                                            <p>Currently, I manage a team of developers, designers, data scientists, and biomedical experts, jointly pushing the boundaries in <a href="https://www.causaly.com/"
-                                                                                                            target="_blank">Causaly</a>'s efforts to revolutionise biomedical research by spearheading the fusion of Large Language Models (LLMs) with Knowledge Graph-powered search. My role involves enhancing the search experience for our biopharma user base and leading the scaling of our cutting-edge technology. I am also a guest lecturer on the <a href="https://www.conceptionx.org/" target="_blank">ConceptionX</a> programme for deep tech founders. </p>
+                                            <p>Currently, I lead the <a href="https://www.figma.com/dev-mode/" target="_blank">Dev Mode</a> product team at <a href="www.figma.com" target="_blank">Figma</a>, an industry-leading product that helps turn design concepts into reality. As the future of software development leans toward AI-powered code generation, visual design is the most intuitive way to express instruction for front-end development. I’m excited to be advancing the design-to-code workflow by combining Figma’s cutting-edge design tools, AI and code generation capabilities. Additionally, I serve as a guest lecturer for the <a href="https://www.conceptionx.org/" target="_blank">ConceptionX</a> programme, supporting deep tech founders.</p>
 
-                                              <p>Before this, I spent 2 years building data-driven financial products and 5 years as an <a href="https://angel.co/marc-sloan"
-                                                                             target="_blank">entrepreneur</a> building a next-generation web search technology, very similar in operation to the chat-GPT models of today. This real-time virtual assistant aided users as they browsed online. You can check it out over there, go ahead, you can play around with it.</p>
+                                            <p>Prior to this, I spent 5 years in startups applying technologies like NLP, large language models (LLMs), knowledge graphs (KGs), and retrieval-augmented generation (RAG) to products in the <a href="https://www.weareuncapped.com/" target="_blank">fintech</a> and <a href="https://www.causaly.com/" target="_blank">biomedical</a> sectors. Before that, I committed 5 years to <a href="https://angel.co/marc-sloan" target="_blank">entrepreneurship</a>, building a next-generation web search technology that operated similarly to today’s ChatGPT models. This real-time virtual assistant helped users as they navigated the web. You can check it out over there, go ahead, you can play around with it.</p>
 
                                             </div>
                                         </div>
