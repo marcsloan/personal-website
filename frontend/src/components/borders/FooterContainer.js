@@ -17,7 +17,6 @@ export default class FooterContainer extends Component {
             'github': 'https://github.com/marcsloan',
             'googlescholar': 'https://scholar.google.com/citations?user=17C0-A0AAAAJ&hl=en',
             'medium': 'https://medium.com/@MarcCSloan',
-            'dribbble': 'https://dribbble.com/marcsloan',
         }
 
         let staticURL = this.props.global.STATIC_URL
