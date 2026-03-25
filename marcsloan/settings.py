@@ -127,7 +127,8 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
-del DATABASES['default']['OPTIONS']['sslmode']
+if 'default' in DATABASES and 'OPTIONS' in DATABASES['default']:
+    DATABASES['default']['OPTIONS'].pop('sslmode', None)
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
