@@ -12,7 +12,6 @@ __pycache__/
 *.py[cod]
 .*.swp
 db.sqlite3
-frontend/static/frontend/
 staticfiles/
 .pytest_cache/
 .python-version
