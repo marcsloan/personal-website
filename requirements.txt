@@ -2,6 +2,7 @@ Django==4.0
 django-cors-headers==1.2.2
 django-extensions==2.1.2
 dj-database-url==0.5.0
+whitenoise==5.3.0
 django-rest-auth==0.6.0
 django-storages==1.6.5
 django-su==0.8.0
