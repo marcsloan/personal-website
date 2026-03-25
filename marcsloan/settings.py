@@ -1,6 +1,5 @@
 import os
 
-import django_heroku
 import dj_database_url
 import dotenv
 import json
@@ -126,9 +125,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
-if 'default' in DATABASES and 'OPTIONS' in DATABASES['default']:
-    DATABASES['default']['OPTIONS'].pop('sslmode', None)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=False)
+ALLOWED_HOSTS = ['*']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
