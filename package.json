@@ -48,7 +48,7 @@
     "weak-key": "^1.0.1",
     "webpack": "^4.29.0",
     "webpack-bundle-tracker": "^0.4.2-beta",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "emoji-js": "^3.5.0",
