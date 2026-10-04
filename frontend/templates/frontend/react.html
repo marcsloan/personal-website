@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% load static %}<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156408401-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-156408401-1');
-    </script>
-
     <meta name="google-site-verification" content="Uxv6TkTSdQdLAuICQvDlRV2EFIWfmsGEQTU61JP3i6I"/>
     <meta name="ahrefs-site-verification" content="55f7635c6fbd99f2ec41773dadc32629eba1ad5c257a005993f5611669c3560e">
     <meta charset="utf-8">
@@ -20,6 +10,16 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/static/img/favicon_io/site.webmanifest">
     <title>Hi, I'm Marc Sloan</title>
+    <meta name="description" content="Senior Product Manager at Tessl working on AI code agent enablement. Previously Figma (Code Connect), startup founder and UCL PhD in information retrieval.">
+    <link rel="canonical" href="https://www.marcsloan.com{{ request.path }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Marc Sloan">
+    <meta property="og:title" content="Hi, I'm Marc Sloan">
+    <meta property="og:description" content="Senior Product Manager at Tessl working on AI code agent enablement. Previously Figma (Code Connect), startup founder and UCL PhD in information retrieval.">
+    <meta property="og:url" content="https://www.marcsloan.com{{ request.path }}">
+    <meta property="og:image" content="https://www.marcsloan.com{% static 'img/index/avatar.jpeg' %}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@MarcCSloan">
 </head>
 <body>
 
@@ -31,6 +31,5 @@
     <div id="react">{{ title }}</div>
 </div>
 </body>
-{% load static %}
 <script src="{% static "frontend/main.js" %}"></script>
 </html>
