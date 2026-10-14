@@ -1,0 +1,14 @@
+{
+  "name": "personal-website",
+  "mode": "vendored",
+  "dependencies": {
+    "tessl-labs/factory-setup": {
+      "version": "0.4.2"
+    }
+  },
+  "agents": [
+    "claude-code",
+    "cursor",
+    "copilot"
+  ]
+}
